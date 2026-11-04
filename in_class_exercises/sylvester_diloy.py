@@ -1,11 +1,9 @@
 list = [6, 1, 3, 2, 5, 4, 7, 9, 8]
 new_list = []
 
-for i in list:
+for i in range(len(list)):
+  new_list.append(list[-1])
   i = list[-1]
-  new_list.append(i)
-  i -= 1
+  list.remove(i)
 
-print(list)
-
-#still working in a separate tab
+print(new_list)
