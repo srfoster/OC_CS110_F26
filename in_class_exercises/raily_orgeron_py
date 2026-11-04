@@ -1,5 +1,5 @@
 
 color_values = {"red":1, "blue":5, "green":4, "yellow":3, "orange":2, "violet":7, "indigo":6}
-def revere_rainbow(x):
+def reverse_rainbow(x):
   return sorted(x.items(-7:-1)
-print(color_values()) #print in reverse order
+print(reverse_rainbows(color_values()) #print in reverse order
