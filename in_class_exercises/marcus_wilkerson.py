@@ -1,7 +1,9 @@
 shoe_size = [12, 11, 10, 9]
-reversed_sizes = []
-for size in shoe_size:
-    reversed_sizes.insert(0, size)
-print(reversed_sizes)  # [9, 10, 11, 12]
+left, right = 0, len(shoe_size) - 1
+while left < right:
+    shoe_size[left], shoe_size[right] = shoe_size[right], shoe_size[left]
+    left += 1
+    right -= 1
+print(shoe_size)  # [9, 10, 11, 12]
   
   
