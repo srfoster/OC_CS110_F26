@@ -16,3 +16,8 @@ result = reverse_list(numbers)
 
 print(result)
 
+kelson = [
+    "[| ] z [| ]",
+    "    (.    ",
+    ":.  __    .:"
+]
