@@ -1,2 +1,5 @@
 string = "racecar"
-print(string[::-1])
+broken = list(string)
+broken.reverse()
+assemble = "".join(broken)
+print(assemble)
