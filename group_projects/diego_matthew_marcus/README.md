@@ -21,3 +21,9 @@ Randomly assigns the user two traits from a predetermined list of subjectively/o
 - Trait 1 = Subjectively undesirable by the model
 - Trait 2 = Objectively desirable by the model
 - Decision = Approved by the model
+
+## Example Model
+- Model goal = Approve/Deny loan applications based on credit score
+- Trait 1 = From "X" zip code (proxied as undesirable by the model)
+- Trait 2 = Credit score of 750 (generally good score, but weighed less by the model than zip code)
+- Decision = Denied by the model
