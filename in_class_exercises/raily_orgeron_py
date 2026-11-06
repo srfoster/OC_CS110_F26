@@ -1,7 +1,18 @@
 #write python function that reverses string 
+#in:red
+#out:der
 
 color= "red"
+
 def mirror():
   return 
 
 print(mirror())
+
+s+"new_string =1 +new_string"
+
+new_string+ ""
+for 1 in s:
+new_string = 1 + new_string
+
+print(new_string)
