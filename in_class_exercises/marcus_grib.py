@@ -1,19 +1,21 @@
-numbers = "12345678"
+numbers = ["1", "2", "3"]
 
 
 def reversing(x):
     process_ender = 0
     character_sliced = -1
-    new_string = ""
+    if isinstance(numbers, str):
+        x.split()
+    new_variable = []
     while process_ender < len(numbers):
 
-        new_string += x[character_sliced]
+        new_variable.append(x[character_sliced])
         character_sliced -= 1
         process_ender += 1
-    return new_string
+    if isinstance(numbers, str):
+        new_variable = "".join(new_variable)
+    return new_variable
 
-new_string = reversing(numbers)
+new_variable = reversing(numbers)
 
-print(new_string)
-
-
+print(new_variable)
