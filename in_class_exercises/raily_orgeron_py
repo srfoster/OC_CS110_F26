@@ -1,5 +1,7 @@
+#write python function that reverses string 
 
-color_values = {"red":1, "blue":5, "green":4, "yellow":3, "orange":2, "violet":7, "indigo":6}
-def reverse_rainbow(x):
-  return sorted(x.items(-7:-1)
-print(reverse_rainbows(color_values()) #print in reverse order
+color= "red"
+def mirror():
+    return color[::-1]
+
+print(mirror())
