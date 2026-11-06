@@ -1,4 +1,4 @@
-string = "hello"
+string = "Three word sentence."
 new_string = ""
 
 def reverse(string):
