@@ -14,7 +14,7 @@ Teach the user about how WMD's can discriminate against an arbitrary group of pe
 ## Module 2 (Matthew)
 - Trait 1 = Subjectively desirable by the model
 - Trait 2 = Objectively undesirable by the model
-- Decision = Denied by the model
+- Decision = Approved by the model
 
 ## Module 3 (Diego)
 - Trait 1 = Subjectively undesirable by the model
