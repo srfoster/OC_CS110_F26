@@ -1,4 +1,4 @@
-string = "banana"
+string = "hello"
 new_string = ""
 
 def reverse(string):
