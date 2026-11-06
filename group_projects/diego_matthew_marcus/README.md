@@ -1,8 +1,10 @@
-# Goal
+# Project Goal
 Teach the user about how WMD's can discriminate against an arbitrary group of people even when they should be objectively favored.
 
 ## General Module Description
-Randomly assigns the user two traits from a predetermined list of subjectively/objectively desirable/undesirable traits. Surveys the user. Produces an ethical/unethical decision based on the design of the model.
+1. Randomly assigns the user two traits from a predetermined list of subjectively/objectively desirable/undesirable traits.
+2. Surveys the user.
+3. Produces an ethical/unethical decision based on the design of the model.
 
 ## Module 1 (Marcus)
 - Trait 1 = Subjectively undesirable by the model
