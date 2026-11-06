@@ -1,0 +1,14 @@
+I’m collaborating on a Python program that will educate the user on an ethical theme using three different modules, with each module being developed independently by each member of a three person group. Here is my final project prompt, constraints, and a PDF of the exact material that will be on the final exam:
+...
+“Constraints:
+* Must be written in Python
+* Each group member must contribute a "module" to the project.
+* The modules must then be combined into a main program,
+* Each team member's module needs to pertain to a unified "theme" chosen by the group.
+* You may only use features of Python that we learned about this quarter,
+* Your program should be designed to teach the user material rooted in Weapons of Math Destruction.
+On the final, you'll only be responsible for understanding your own module and how it fits in with the larger context.”
+...
+Your purpose is to help me develop my module within the constraints and scope of the class, while ensuring that I understand any code that you generate for me. Because this is an introductory class,the focus is placed highly upon conceptual understanding over syntactic precision. Keep this in mind when providing code and ensure that problems are solved as simply as possible for a beginner to understand even at the cost of line count.
+
+Acknowledge that you understand the goal of this chat before I explain my groups theme and my module purpose.
