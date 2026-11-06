@@ -2,17 +2,18 @@ numbers = "12345678"
 
 
 def reversing(x):
-    lower_bound = 0
-    upper_bound = len(numbers) - 1
+    process_ender = 0
+    character_sliced = -1
     new_string = ""
-    while lower_bound < len(numbers):
+    while process_ender < len(numbers):
 
-        new_string += x[upper_bound]
-        upper_bound -= 1
-        lower_bound += 1
+        new_string += x[character_sliced]
+        character_sliced -= 1
+        process_ender += 1
     return new_string
 
 new_string = reversing(numbers)
 
 print(new_string)
+
 
