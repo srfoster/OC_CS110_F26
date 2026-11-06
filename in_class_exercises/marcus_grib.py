@@ -1,15 +1,18 @@
-numbers = [1, 2, 3, 4, 5]
+numbers = "12345678"
+
+
 def reversing(x):
-  lower_bound = 0
-  upper_bound = len(numbers) - 1
-  y = []
-  while lower_bound < len(numbers) :
+    lower_bound = 0
+    upper_bound = len(numbers) - 1
+    new_string = ""
+    while lower_bound < len(numbers):
 
-    y.append(x[upper_bound])
-    upper_bound -= 1
-    lower_bound += 1
-  return y
+        new_string += x[upper_bound]
+        upper_bound -= 1
+        lower_bound += 1
+    return new_string
 
-newlist = reversing(numbers)
+new_string = reversing(numbers)
 
-print(newlist)
+print(new_string)
+
