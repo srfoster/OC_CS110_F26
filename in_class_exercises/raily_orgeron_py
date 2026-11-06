@@ -1,3 +1,7 @@
+#write python function that reverses string 
 
-color_values = {"red":1, "blue":5, "green":4, "yellow":3, "orange":2, "violet":7, "indigo":6}
-print(color_values()) #print in reverse order
+color= "red"
+def mirror():
+  return 
+
+print(mirror())

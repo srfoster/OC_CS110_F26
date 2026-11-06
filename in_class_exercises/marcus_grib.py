@@ -1,15 +1,21 @@
-numbers = [1, 2, 3, 4, 5]
+numbers = ["1", "2", "3"]
+
+
 def reversing(x):
-  lower_bound = 0
-  upper_bound = len(numbers) - 1
-  y = []
-  while lower_bound < len(numbers) :
+    process_ender = 0
+    character_sliced = -1
+    if isinstance(numbers, str):
+        x.split()
+    new_variable = []
+    while process_ender < len(numbers):
 
-    y.append(x[upper_bound])
-    upper_bound -= 1
-    lower_bound += 1
-  return y
+        new_variable.append(x[character_sliced])
+        character_sliced -= 1
+        process_ender += 1
+    if isinstance(numbers, str):
+        new_variable = "".join(new_variable)
+    return new_variable
 
-newlist = reversing(numbers)
+new_variable = reversing(numbers)
 
-print(newlist)
+print(new_variable)

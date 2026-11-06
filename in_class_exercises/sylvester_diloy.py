@@ -1,9 +1,18 @@
-list = [6, 1, 3, 2, 5, 4, 7, 9, 8]
-new_list = []
+string = "Three word sentence."
+new_string = ""
 
-for i in range(len(list)):
-  new_list.append(list[-1])
-  i = list[-1]
-  list.remove(i)
+def reverse(string):
+    new_string = string[-1:len(string)*-1-1:-1]
+    print(new_string)
+    
+reverse(string)
 
-print(new_list)
+"""
+don't need function:
+
+string = "Three word sentence."
+new_string = ""
+
+new_string = string[-1:len(string)*-1-1:-1]
+print(new_string)
+"""
