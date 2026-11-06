@@ -2,6 +2,6 @@
 
 color= "red"
 def mirror():
-
+  return 
 
 print(mirror())
