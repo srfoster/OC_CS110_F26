@@ -18,6 +18,17 @@ for Y in range (1,len(s)+1):
 
 print(new_string)
 
+#if
+s = "Hello world"
+new_string = ""
+for Y in range (1,len(s)+1):
+#step 1b
+    last_letter_of_s = s[len(s) -Y]
+#step 1c
+    new_string = last_letter_of_s + new_string
+    print(new_string)
+#It would be "Hello world" because of strings ex. "d" + "" -> "l" + "d" -> "r" + "ld" ->....->"Hello world"
+
 #-----Note----------
 #In: "apple"
 #Out:"elppa"
