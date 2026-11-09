@@ -15,6 +15,22 @@ an integration point: a line where the main program calls your module, or your m
 
 #whole thing may be completable in a few days
 
-#brainstorm, then start
-
 #WRITE TO A FILE AND OPEN WHEN USER TYPES OPTIONS?
+#is .py in the filename or the file type?
+
+import random
+
+print("=" * 71)
+print("Opacity: When nobody that is affected by a model can see how it works.")
+print("=" * 71)
+
+print("\nFor an example of opacity, I have created a model that will rate your\ntrustworthiness from 1-100.")
+input(print("\nJust type your name: "))
+
+def calculate_trustworthiness():
+    random_trustworthiness = random.randint(1,100)
+    print("Your trustworthiness is " + str(random_trustworthiness) + "/100")
+calculate_trustworthiness()
+
+#give example of trustworthiness using random
+#did nothing with name, say
