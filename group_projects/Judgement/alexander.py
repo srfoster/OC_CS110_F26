@@ -24,13 +24,19 @@ def denied_press():
 decision1.title("Will you allow an early release?")
 decision1.geometry("800x400") # To make the window larger
 
+decision1_label = Label(decision1, text="Will you allow an early release?", font=("Arial", 16), wraplength=700)
+decision1_label.pack(pady=30)
 
 #Planning to add the prompt here, but I don't know how to do that yet.
-canvas = Canvas(decision1, width=200, height=100, bg="black")
-
-canvas.create_text(100, 50, text="Criminal Here", fill="white", font=("Arial", 12))
-canvas.pack()
-
+'''
+prompt = Label(
+    decision1,
+    text = "criminal",
+    font = ("Arial", 16),
+    wraplength = 700
+)
+prompt.pack(pady =  30, padx = 30)
+'''
 
 approved_button = Button(decision1, text="Approved", command=approve_press,)
 approved_button.pack()
