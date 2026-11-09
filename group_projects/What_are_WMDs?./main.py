@@ -18,7 +18,7 @@ while True:
     print()
     # change template file name to your file
     if choice == "1":
-        import file1
+        import sylvester_opacity_module
     elif choice == "2":
         import file2
     elif choice == "3":
