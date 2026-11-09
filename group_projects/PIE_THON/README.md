@@ -6,17 +6,17 @@ Teach the user about how WMD's can discriminate against an arbitrary group of pe
 2. Surveys the user.
 3. Produces an ethical/unethical decision based on the design of the model.
 
-## Module 1 (Marcus)
+## Module 1
 - Trait 1 = Subjectively undesirable by the model
 - Trait 2 = Objectively desireable for the context
 - Decision = Denied by the model
 
-## Module 2 (Matthew)
+## Module 2
 - Trait 1 = Subjectively desirable by the model
 - Trait 2 = Objectively undesirable for the context
 - Decision = Approved by the model
 
-## Module 3 (Diego)
+## Module 3
 - Trait 1 = Subjectively undesirable by the model
 - Trait 2 = Objectively desirable for the context
 - Decision = Approved by the model
