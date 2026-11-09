@@ -15,6 +15,5 @@ an integration point: a line where the main program calls your module, or your m
 
 #whole thing may be completable in a few days
 
-#brainstorm, then start
-
 #WRITE TO A FILE AND OPEN WHEN USER TYPES OPTIONS?
+#is .py in the filename or the file type?
