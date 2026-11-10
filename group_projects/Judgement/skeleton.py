@@ -10,18 +10,10 @@ def denied_press():
 
 decision1.title("Will you allow an early release?")
 decision1.geometry("800x400") # To make the window larger
-'''
-decision1_label = Label(decision1, text="Will you allow an early release?", font=("Arial", 16), wraplength=700)
-decision1_label.pack(pady=30)
-'''
+
 #Planning to add the prompt here, but I don't know how to do that yet.
 
-prompt = tk.Label(
-    decision1,
-    text = "criminal",
-    font = ("Arial", 16),
-    wraplength = 700
-)
+prompt = tk.Label( decision1, text = "criminal", wraplength = 700)
 prompt.pack(pady =  30, padx = 30)
 
 approved_button = tk.Button(decision1, text="Approved", command=approve_press,)

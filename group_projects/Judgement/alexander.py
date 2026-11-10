@@ -28,7 +28,7 @@ decision1_label = Label(decision1, text="Will you allow an early release?", font
 decision1_label.pack(pady=30)
 
 #Planning to add the prompt here, but I don't know how to do that yet.
-'''
+
 prompt = Label(
     decision1,
     text = "criminal",
@@ -36,7 +36,7 @@ prompt = Label(
     wraplength = 700
 )
 prompt.pack(pady =  30, padx = 30)
-'''
+
 
 approved_button = Button(decision1, text="Approved", command=approve_press,)
 approved_button.pack()
