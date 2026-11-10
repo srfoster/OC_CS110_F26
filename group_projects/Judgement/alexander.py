@@ -1,5 +1,17 @@
 import tkinter as tk  #this seemed to work better for me than class example
 
+introduction = tk.Tk()
+introduction.title("Warden's Judgement")
+introduction.geometry("800x400") 
+
+introduction_label = tk.Label(introduction, text = "This game will decide the fate of criminals that you will never see. There is limited information available. There may be a right answer, but you may not know until it is too late. Good luck on your first day of work as the warden", font=("Arial", 16), wraplength=700)
+introduction_label.pack(pady=30)
+
+introduction_button = tk.Button(introduction, text="Continue", command=introduction.destroy)
+introduction_button.pack()
+
+introduction.mainloop()
+
 decision1 = tk.Tk()
 
 def approve_press():
