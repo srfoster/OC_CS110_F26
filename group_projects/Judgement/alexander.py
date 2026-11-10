@@ -1,5 +1,5 @@
 import tkinter as tk  
-
+import jet
 introduction = tk.Tk()
 introduction.title("Warden's Judgement")
 introduction.geometry("800x400") 
@@ -38,8 +38,8 @@ def denied_press():
     
     denied_consequence.title("After Denial")
     denied_consequence.geometry("800x400")
-    
-    denied_consequence_label = tk.Label(denied_consequence, text="Good choice, more evidence was found and they will be in prison for a long time.", font=("Arial", 16), wraplength=700)
+    denied_consequence_label = tk.Label(denied_consequence, text=jet.word, font=("Arial", 16), wraplength=700)
+    #denied_consequence_label = tk.Label(denied_consequence, text="Good choice, more evidence was found and they will be in prison for a long time.", font=("Arial", 16), wraplength=700)
     denied_consequence_label.pack(pady=30)
     
     continue_button = tk.Button(denied_consequence, text="Continue", command=denied_consequence.destroy)
