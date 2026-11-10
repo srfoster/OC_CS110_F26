@@ -3,5 +3,5 @@ def add(num1, num2):
 
 
 
-def word:
+def word():
     return "yes it worked"
