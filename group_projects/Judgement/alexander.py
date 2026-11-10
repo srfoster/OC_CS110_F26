@@ -1,4 +1,4 @@
-import tkinter as tk  #this seemed to work better for me than class example
+import tkinter as tk  
 
 introduction = tk.Tk()
 introduction.title("Warden's Judgement")
