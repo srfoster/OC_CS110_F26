@@ -1,15 +1,14 @@
-# module3.py
 # Module 3: an ETHICAL loan model.
 # The model scores only loan-relevant answers, and it shows its work.
 # Favorite color is asked but worth 0 points.
 
-APPROVAL_CUTOFF = 60   # variable: score needed to be approved
+APPROVAL_CUTOFF = 60
 
-# The letters shown next to each answer choice
-letters = ["a", "b", "c", "d"]
+letters = ["a", "b", "c", "d"] # multiple choice display
 
 # List of survey questions. Each question is a dictionary with its text,
 # its answer choices, and the points each choice is worth.
+
 questions = [
     {
         "text": "What is your debt-to-income ratio?",
@@ -38,10 +37,10 @@ questions = [
     },
 ]
 
-
 # Function with a parameter and a return value.
 # Asks one question, repeats until the answer is valid,
 # and returns the points earned.
+
 def ask_question(question):
     number_of_options = len(question["options"])
 
@@ -53,7 +52,7 @@ def ask_question(question):
 
         print()
         answer = input("Enter a letter: ")
-        answer = answer.lower()   # so "A" and "a" both work
+        answer = answer.lower() # case insensitive
 
         if answer == "a":
             return question["points"][0]
@@ -69,12 +68,13 @@ def ask_question(question):
 
 
 # Integration point: the main menu calls module3.run_module()
+
 def run_module():
     print("=== Module 3: Loan Approval Model ===")
     print("This model is transparent: you will see the points for every answer.")
     print("You need", APPROVAL_CUTOFF, "points to be approved.")
 
-    # Ask every question and add up the points
+    # ask every question accumulating points
     total_score = 0
     for question in questions:
         points = ask_question(question)
@@ -82,7 +82,7 @@ def run_module():
         print()
         print("-> That answer earned", points, "points. Current points:", total_score)
 
-    # Decide: compare the total to the cutoff
+    # compare the total to the cutoff:
     if total_score >= APPROVAL_CUTOFF:
         decision = "APPROVED"
         difference = total_score - APPROVAL_CUTOFF
@@ -92,6 +92,7 @@ def run_module():
         difference = APPROVAL_CUTOFF - total_score
         position = "below"
 
+	# display the results:
     print()
     print("Total points: " + str(total_score) + " (" + str(difference) + " points " + position + " the cutoff)")
     print()
