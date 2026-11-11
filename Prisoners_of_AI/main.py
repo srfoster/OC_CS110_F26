@@ -2,6 +2,9 @@ from tkinter import *
 from tkinter import ttk
 import Nathan_morris as NM
 
+def on_send():
+    NM.send_text(the_input)
+    
 root = Tk()
 root.title("Prisoners of AI")
 
@@ -23,7 +26,7 @@ root.bind("<Return>", send_text)
 weight_one = StringVar()
 ttk.Label(mainframe, textvariable=weight_one).grid(column=2, row=2, sticky=(W, E))
 
-ttk.Button(mainframe, text="Send text", command=NM.send_text).grid(column=3, row=1, sticky=W)
+ttk.Button(mainframe, text="Send text", command=on_send).grid(column=3, row=1, sticky=W)
 
 ttk.Label(mainframe, text="User input").grid(column=3, row=2, sticky=W)
 ttk.Label(mainframe, text="AI weighted response").grid(column=1, row=3, sticky=E)
