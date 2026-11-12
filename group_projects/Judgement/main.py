@@ -89,7 +89,7 @@ while x < 3:
 
     decision.mainloop()
     x += 1
-    
+
 #After loop
 conclusion = tk.Tk()
 
@@ -108,10 +108,13 @@ conclusion.mainloop()
 #1. A dictionary to make it easier to pull our prompts randomly
 #2. A function to throw the parts of the prompt pulled by the dictionary and place it in designated text boxes in the GUI.
 #3. A funtion to pull from the different dictionaries based on the difficulty level chosen by the player.
+#4. Agree on vairables to ensure text is pulled properly into main loop.
 
 #Things we individually need to do in our own files:
 #1. Most importantly finalize the prompts for each of your prisorners one for each difficulty level, Easy, Medium, and Hard.
-#2. Create your own dictionary for your prompts and make sure it is formatted correctly to be pulled by the main.py file.
+#2. Setting unique variables for all prompts, accepted consequences, and denied consequences.
+#3. Create your own dictionary for your prompts using those unique variables and make sure it is formatted correctly to be pulled by the main.py file.
 
 #Eventually we will want to make the game harder by restricting information about the prisoner or how they were arrested.
 #Possibly only allowing the player to deny a certain amount of criminals due to budget constraints so the player will have to think about if there will be a worse criminal coming up.
+#Try your best!
