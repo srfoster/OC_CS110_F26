@@ -42,61 +42,63 @@ hard_button = tk.Button(introduction, text="Hard", command=introduction.destroy)
 hard_button.pack()
 
 introduction.mainloop()
+x = 0
+while x < 3:
+    decision = tk.Tk()
 
-decision = tk.Tk()
-
-def approve_press():
-    print("Approved!")
-    decision.destroy()  
+    def approve_press():
+        print("Approved!")
+        decision.destroy()  
     
-    approved_consequence = tk.Tk()
+        approved_consequence = tk.Tk()
     
-    approved_consequence.title("After Approval")
-    approved_consequence.geometry("800x400") 
+        approved_consequence.title("After Approval")
+        approved_consequence.geometry("800x400") 
     
-    approved_consequence_label = tk.Label(approved_consequence, text="import consequence", font=("Arial", 16), wraplength=700)
-    approved_consequence_label.pack(pady=30)
+        approved_consequence_label = tk.Label(approved_consequence, text="import consequence", font=("Arial", 16), wraplength=700)
+        approved_consequence_label.pack(pady=30)
     
-    continue_button = tk.Button(approved_consequence, text="Continue", command=approved_consequence.destroy)
-    continue_button.pack()
+        continue_button = tk.Button(approved_consequence, text="Continue", command=approved_consequence.destroy)
+        continue_button.pack()
     
 
-def denied_press():
-    print("Denied!")  
-    decision.destroy()  
+    def denied_press():
+        print("Denied!")  
+        decision.destroy()  
     
-    denied_consequence = tk.Tk()
+        denied_consequence = tk.Tk()
     
-    denied_consequence.title("After Denial")         #below here is the import from jet.py 
-    denied_consequence.geometry("800x400")
+        denied_consequence.title("After Denial")         #below here is the import from jet.py 
+        denied_consequence.geometry("800x400")
 
-    denied_consequence_label = tk.Label(denied_consequence, text=jet.word(), font=("Arial", 16), wraplength=700) #example of importing from jet.py
-    #denied_consequence_label = tk.Label(denied_consequence, text="Good choice, more evidence was found and they will be in prison for a long time.", font=("Arial", 16), wraplength=700)
-    denied_consequence_label.pack(pady=30)
+        denied_consequence_label = tk.Label(denied_consequence, text=jet.word(), font=("Arial", 16), wraplength=700) #example of importing from jet.py
+        #denied_consequence_label = tk.Label(denied_consequence, text="Good choice, more evidence was found and they will be in prison for a long time.", font=("Arial", 16), wraplength=700)
+        denied_consequence_label.pack(pady=30)
     
-    continue_button = tk.Button(denied_consequence, text="Continue", command=denied_consequence.destroy)
-    continue_button.pack()
+        continue_button = tk.Button(denied_consequence, text="Continue", command=denied_consequence.destroy)
+        continue_button.pack()
 
 
-decision.title("Will you allow an early release?")
-decision.geometry("800x400") 
+    decision.title("Will you allow an early release?")
+    decision.geometry("800x400") 
 
-decision1_label = tk.Label(decision, text="import prompt", font=("Arial", 16), wraplength=700)
-decision1_label.pack(pady=30)
+    decision1_label = tk.Label(decision, text="import prompt", font=("Arial", 16), wraplength=700)
+    decision1_label.pack(pady=30)
 
 
-approved_button = tk.Button(decision, text="Approved", command=approve_press,)
-approved_button.pack()
+    approved_button = tk.Button(decision, text="Approved", command=approve_press,)
+    approved_button.pack()
 
-my_spacer = tk.Label(decision, text="")
-my_spacer.pack()
+    my_spacer = tk.Label(decision, text="")
+    my_spacer.pack()
 
-denied_button = tk.Button(decision, text="Denied", command=denied_press,)
-denied_button.pack()
+    denied_button = tk.Button(decision, text="Denied", command=denied_press,)
+    denied_button.pack()
 
-decision.mainloop()
-
-#need to add loop to make 3 decisions and then process this conclusion window to lead to end of game.
+    decision.mainloop()
+    x += 1
+    
+#After loop
 conclusion = tk.Tk()
 
 conclusion.title("Time to clock out")
@@ -111,10 +113,9 @@ conclusion_button.pack()
 conclusion.mainloop()
 
 #Things we will need to add in main.py:
-#1. A function to run the game through a loop to make 3 decisions and then end the game.
-#2. A dictionary to make it easier to pull our prompts randomly
-#3. A function to throw the parts of the prompt pulled by the dictionary and place it in designated text boxes in the GUI.
-#4. A funtion to pull from the different dictionaries based on the difficulty level chosen by the player.
+#1. A dictionary to make it easier to pull our prompts randomly
+#2. A function to throw the parts of the prompt pulled by the dictionary and place it in designated text boxes in the GUI.
+#3. A funtion to pull from the different dictionaries based on the difficulty level chosen by the player.
 
 #Things we individually need to do in our own files:
 #1. Most importantly finalize the prompts for each of your prisorners one for each difficulty level, Easy, Medium, and Hard.
