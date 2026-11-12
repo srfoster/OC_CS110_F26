@@ -3,7 +3,7 @@ from tkinter import ttk
 import Nathan_morris as NM
 
 def on_send():
-    NM.send_text(the_input)
+    NM.send_text(the_input.get())
     
 root = Tk()
 root.title("Prisoners of AI")
