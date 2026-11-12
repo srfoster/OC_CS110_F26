@@ -4,19 +4,31 @@ introduction = tk.Tk()
 introduction.title("Warden's Judgement")
 introduction.geometry("800x400") 
 
-introduction_label = tk.Label(introduction, text = "This game will decide the fate of criminals that you will never see. There is limited information available. There may be a right answer, but you may not know until it is too late. Good luck on your first day of work as the warden", font=("Arial", 16), wraplength=700)
+introduction_label = tk.Label(introduction, text = "This game will decide the fate of criminals that you will never see. There is limited information available. There may be a right answer, but you may not know until it is too late. Please choose a difficulty level and good luck on your first day of work as the warden", font=("Arial", 16), wraplength=700)
 introduction_label.pack(pady=30)
 
-introduction_button = tk.Button(introduction, text="Continue", command=introduction.destroy)
-introduction_button.pack()
+easy_button = tk.Button(introduction, text="Easy", command=introduction.destroy)
+easy_button.pack()
+
+my_spacer = tk.Label(introduction, text="")
+my_spacer.pack()
+
+medium_button = tk.Button(introduction, text="Medium", command=introduction.destroy)
+medium_button.pack()
+
+my_spacer2 = tk.Label(introduction, text="")
+my_spacer2.pack()
+
+hard_button = tk.Button(introduction, text="Hard", command=introduction.destroy)
+hard_button.pack()
 
 introduction.mainloop()
 
-decision1 = tk.Tk()
+decision = tk.Tk()
 
 def approve_press():
     print("Approved!")
-    decision1.destroy()  # Close the window after approval
+    decision.destroy()  # Close the window after approval
     
     approved_consequence = tk.Tk()
     
@@ -32,11 +44,11 @@ def approve_press():
 
 def denied_press():
     print("Denied!")  
-    decision1.destroy()  # Close the window after denial
+    decision.destroy()  # Close the window after denial
     
     denied_consequence = tk.Tk()
     
-    denied_consequence.title("After Denial") #balls
+    denied_consequence.title("After Denial")         #below here is the import from jet.py 
     denied_consequence.geometry("800x400")
     denied_consequence_label = tk.Label(denied_consequence, text=jet.word(), font=("Arial", 16), wraplength=700)
     #denied_consequence_label = tk.Label(denied_consequence, text="Good choice, more evidence was found and they will be in prison for a long time.", font=("Arial", 16), wraplength=700)
@@ -46,25 +58,25 @@ def denied_press():
     continue_button.pack()
 
 
-decision1.title("Will you allow an early release?")
-decision1.geometry("800x400") # To make the window larger
+decision.title("Will you allow an early release?")
+decision.geometry("800x400") # To make the window larger
 
-decision1_label = tk.Label(decision1, text="This criminal has committed a serious offense.", font=("Arial", 16), wraplength=700)
+decision1_label = tk.Label(decision, text="This criminal has committed a serious offense.", font=("Arial", 16), wraplength=700)
 decision1_label.pack(pady=30)
 
 
-approved_button = tk.Button(decision1, text="Approved", command=approve_press,)
+approved_button = tk.Button(decision, text="Approved", command=approve_press,)
 approved_button.pack()
 
-my_spacer = tk.Label(decision1, text="")
+my_spacer = tk.Label(decision, text="")
 my_spacer.pack()
 
-denied_button = tk.Button(decision1, text="Denied", command=denied_press,)
+denied_button = tk.Button(decision, text="Denied", command=denied_press,)
 denied_button.pack()
 
 
 
-decision1.mainloop()
+decision.mainloop()
 #End of first decision window.
 
 #Wash Rinse and Repeat but change prompts and consequences for the second decision window.
