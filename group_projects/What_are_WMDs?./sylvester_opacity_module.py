@@ -16,7 +16,9 @@ an integration point: a line where the main program calls your module, or your m
 #whole thing may be completable in a few days
 
 #WRITE TO A FILE AND OPEN WHEN USER TYPES OPTIONS?
-#is .py in the filename or the file type?
+#is .py in the filename or the file type? important for importing to main file
+
+
 
 import random
 
@@ -25,12 +27,39 @@ print("Opacity: When nobody that is affected by a model can see how it works.")
 print("=" * 71)
 
 print("\nFor an example of opacity, I have created a model that will rate your\ntrustworthiness from 1-100.")
-input(print("\nJust type your name: "))
+input("\nJust type your name: ") #did nothing with name, maybe say
 
-def calculate_trustworthiness():
+def calculate_trustworthiness(): #random, trustworthy if >= 85, returns statement
     random_trustworthiness = random.randint(1,100)
-    print("Your trustworthiness is " + str(random_trustworthiness) + "/100")
-calculate_trustworthiness()
+    if random_trustworthiness < 85:
+        trust_statement = "Your trustworthiness is " + str(random_trustworthiness) + "/100. You are not trustworthy."
+    else:
+        trust_statement = "Your trustworthiness is " + str(random_trustworthiness) + "/100. You are trustworthy."
+    return random_trustworthiness, trust_statement
+    
+rt, ts = calculate_trustworthiness()
 
-#give example of trustworthiness using random
-#did nothing with name, say
+print("\n" + ts, "\nNow here's a question for you:")
+print("\nHow did the program come up with that number?\n")
+
+print("a. It did calculations based on the length of your name.")
+print("b. It looked your name up in public records.")
+print("c. Your trustworthiness score of", str(rt) + "/100 is a constant, same for everyone.\n")
+
+input("Answer: ")
+print("\nThe answer is actually none of these. Your trustworthiness score was\ncompletely randomly generated, but you wouldn't have known that if you\nweren't told. That is opacity.")
+
+"""
+talk about:
+1. how opacity is dangerous cause the people the model makes decisions
+on don't know how they were made and can't challenge the score
+(explain better)
+2. adding on to ^ or as part of it, talk about how 85 is a very high
+number for someone to be trustworthy, and connect to how opacity hides
+bias
+3. transition to ===good opacity===
+also integrate user interactiveness somewhere; right now its just
+barely an info dump, ex. the inputs aren't even used in anything,
+so add interactiveness that changes what's outputted, edit the inputs
+to be used in the code, do stuff to actually have user interaction
+"""
