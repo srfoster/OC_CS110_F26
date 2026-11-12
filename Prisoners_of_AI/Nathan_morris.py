@@ -18,7 +18,7 @@ saved_tokens = {letter: {} for letter in string.ascii_lowercase}
 
 def send_text(*args):
     try:
-        the_text = args[0].get()
+        the_text = args[0].lower()
         tokens = the_text.split()
         for value, i in enumerate(tokens):
             print(value)
