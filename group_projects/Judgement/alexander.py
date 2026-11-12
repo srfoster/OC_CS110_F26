@@ -85,11 +85,11 @@ hard_accepted = "enter accepted consequence"
 hard_denied = "enter denied consequences"
 
 
-PRE = {"easy prompt":easy_prompt, "easy accepted": easy_accepted, "easy denied": easy_denied }
+PAE = {"easy prompt":easy_prompt, "easy accepted": easy_accepted, "easy denied": easy_denied }
 
-PRM = {"medium prompt": medium_prompt, "medium accepted": medium_accepted, "medium denied": medium_denied}
+PAM = {"medium prompt": medium_prompt, "medium accepted": medium_accepted, "medium denied": medium_denied}
 
-PRH = {"hard prompt": hard_prompt, "hard accepted": hard_accepted, "hard denied":hard_denied}
+PAH = {"hard prompt": hard_prompt, "hard accepted": hard_accepted, "hard denied":hard_denied}
 
 
 
