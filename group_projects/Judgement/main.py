@@ -5,6 +5,11 @@ This above is how you pull functions from other modules
 '''
 import tkinter as tk  
 import jet     #this is how you import other modules, in this case jet.py and we will have all our modules imported as well
+import alexander
+import raily
+import christian
+
+
 introduction = tk.Tk()
 introduction.title("Warden's Judgement")
 introduction.geometry("800x400") 
