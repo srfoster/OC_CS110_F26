@@ -14,6 +14,11 @@ easy_list = []
 medium_list = [alexander.PAM]
 hard_list = []
 
+def easy_press():
+    global prompt, accepted, denied
+    random_easy = random.choice(easy_list)
+    prompt, accepted, denied = random_easy
+    introduction.destroy()
 
 def medium_press():
     global prompt, accepted, denied
@@ -21,7 +26,11 @@ def medium_press():
     prompt, accepted, denied = random_medium
     introduction.destroy()
 
-
+def hard_press():
+    global prompt, accepted, denied
+    random_hard = random.choice(hard_list)
+    prompt, accepted, denied = random_hard
+    introduction.destroy()
 
 introduction = tk.Tk()
 introduction.title("Warden's Judgement")
@@ -134,7 +143,5 @@ conclusion.mainloop()
 '''
 looks like we will have to convert our dictionaries into 3 lists to randomly pull from
 may have to use .pop to remove the used criminal from the pool after picked
-easy = [PAE, PRE, PJE, PTE, PCE]
-medium = [PAM, PRM, PJM, PTM, PCM]
-hard = [PAH, PRH, PJH, PTH, PCH]
+
 '''
