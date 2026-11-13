@@ -73,11 +73,10 @@ while x < 3:
     
         denied_consequence = tk.Tk()
     
-        denied_consequence.title("After Denial")         #below here is the import from jet.py 
+        denied_consequence.title("After Denial")          
         denied_consequence.geometry("800x400")
 
         denied_consequence_label = tk.Label(denied_consequence, text=denied, font=("Arial", 16), wraplength=700) #example of importing from jet.py
-        #denied_consequence_label = tk.Label(denied_consequence, text="Good choice, more evidence was found and they will be in prison for a long time.", font=("Arial", 16), wraplength=700)
         denied_consequence_label.pack(pady=30)
     
         continue_button = tk.Button(denied_consequence, text="Continue", command=denied_consequence.destroy)
