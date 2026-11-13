@@ -8,6 +8,16 @@ import jet     #this is how you import other modules, in this case jet.py and we
 import alexander
 import raily
 import christian
+import random
+
+medium_list = [alexander.PAM]
+
+def medium_press():
+    global prompt, accepted, denied
+    random_medium = random.choice(medium_list)
+    prompt, accepted, denied = random_medium
+    introduction.destroy()
+
 
 
 introduction = tk.Tk()
@@ -24,7 +34,7 @@ easy_button.pack()
 my_spacer = tk.Label(introduction, text="")
 my_spacer.pack()
 
-medium_button = tk.Button(introduction, text="Medium", command=introduction.destroy)
+medium_button = tk.Button(introduction, text="Medium", command=medium_press)
 medium_button.pack()
 
 my_spacer2 = tk.Label(introduction, text="")
@@ -47,7 +57,7 @@ while x < 3:
         approved_consequence.title("After Approval")
         approved_consequence.geometry("800x400") 
     
-        approved_consequence_label = tk.Label(approved_consequence, text=alexander.accepted, font=("Arial", 16), wraplength=700)
+        approved_consequence_label = tk.Label(approved_consequence, text=accepted, font=("Arial", 16), wraplength=700)
         approved_consequence_label.pack(pady=30)
     
         continue_button = tk.Button(approved_consequence, text="Continue", command=approved_consequence.destroy)
@@ -63,7 +73,7 @@ while x < 3:
         denied_consequence.title("After Denial")         #below here is the import from jet.py 
         denied_consequence.geometry("800x400")
 
-        denied_consequence_label = tk.Label(denied_consequence, text=alexander.denied, font=("Arial", 16), wraplength=700) #example of importing from jet.py
+        denied_consequence_label = tk.Label(denied_consequence, text=denied, font=("Arial", 16), wraplength=700) #example of importing from jet.py
         #denied_consequence_label = tk.Label(denied_consequence, text="Good choice, more evidence was found and they will be in prison for a long time.", font=("Arial", 16), wraplength=700)
         denied_consequence_label.pack(pady=30)
     
@@ -74,8 +84,8 @@ while x < 3:
     decision.title("Will you allow an early release?")
     decision.geometry("1000x700") 
 
-    decision1_label = tk.Label(decision, text=alexander.prompt, font=("Arial", 16), wraplength=700)
-    decision1_label.pack(pady=30)
+    decision_label = tk.Label(decision, text=prompt, font=("Arial", 16), wraplength=700)
+    decision_label.pack(pady=30)
 
 
     approved_button = tk.Button(decision, text="Approved", command=approve_press,)
