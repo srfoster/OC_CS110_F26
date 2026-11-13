@@ -6,13 +6,13 @@ This above is how you pull functions from other modules
 import tkinter as tk  
 import jet     
 import alexander
-import raily
 import christian
+import raily
 import random
 
-easy_list = []
+easy_list = [alexander.PAE]
 medium_list = [alexander.PAM]
-hard_list = []
+hard_list = [alexander.PAH]
 
 def easy_press():
     global prompt, accepted, denied

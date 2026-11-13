@@ -1,4 +1,8 @@
 
+PAE = ("criminal prompt", "accepted consequence", "denied consequence")
+prompt, accepted, denied = PAE
+
+
 PAM = ("NAME: Theodore Burton\n"
 "AGE: 27\n"
 "HEIGHT: 5’11\n"
@@ -12,5 +16,6 @@ PAM = ("NAME: Theodore Burton\n"
 prompt, accepted, denied = PAM
 
 
-
+PAH = ("criminal prompt hard", "accepted consequence hard", "denied consequence hard")
+prompt, accepted, denied = PAH
 
