@@ -25,7 +25,7 @@ def medium_press():
 
 introduction = tk.Tk()
 introduction.title("Warden's Judgement")
-introduction.geometry("800x400") 
+introduction.geometry("800x400")
 
 introduction_label = tk.Label(introduction, text = "This game will decide the fate of criminals that you will never see. There is limited information available. There may be a right answer, but you may not know until it is too late. Please choose a difficulty level and good luck on your first day of work as the warden", font=("Arial", 16), wraplength=700)
 introduction_label.pack(pady=30)
