@@ -4,13 +4,16 @@
 This above is how you pull functions from other modules
 '''
 import tkinter as tk  
-import jet     #this is how you import other modules, in this case jet.py and we will have all our modules imported as well
+import jet     
 import alexander
 import raily
 import christian
 import random
 
+easy_list = []
 medium_list = [alexander.PAM]
+hard_list = []
+
 
 def medium_press():
     global prompt, accepted, denied
