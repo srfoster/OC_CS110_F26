@@ -47,19 +47,28 @@ print("b. It looked your name up in public records.")
 print("c. Your trustworthiness score of", str(rt) + "/100 is a constant, same for everyone.\n")
 
 input("Answer: ")
-print("\nThe answer is actually none of these. Your trustworthiness score was\ncompletely randomly generated, but you wouldn't have known that if you\nweren't told. That is opacity.")
+print("\nThe answer is actually none of these. Your trustworthiness score was")
+print("completely randomly generated, but you wouldn't have known that if you\nweren't told. That is opacity.")
+
+print("\nOpacity is dangerous because the people that a model affects are unaware of its")
+print("decision making process, and are therefore unable to challenge its decision.")
+print("The model above only deems you trustworthy if you received a score of 85 or\nlarger.")
+print("\n85 is a pretty high minimum score, right? An opaque model wouldn't tell you the")
+print("minimum passing score or which factors make up your score. Opaque models hide")
+print("bias and human judgment in the code.")
 
 """
 talk about:
 1. how opacity is dangerous cause the people the model makes decisions
 on don't know how they were made and can't challenge the score
-(explain better)
+(explain better) -->
 2. adding on to ^ or as part of it, talk about how 85 is a very high
 number for someone to be trustworthy, and connect to how opacity hides
-bias
+bias -->
 3. transition to ===good opacity===
 also integrate user interactiveness somewhere; right now its just
 barely an info dump, ex. the inputs aren't even used in anything,
 so add interactiveness that changes what's outputted, edit the inputs
 to be used in the code, do stuff to actually have user interaction
+4. how to prevent bad opacity
 """
