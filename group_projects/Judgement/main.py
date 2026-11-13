@@ -72,7 +72,7 @@ while x < 3:
 
 
     decision.title("Will you allow an early release?")
-    decision.geometry("800x400") 
+    decision.geometry("1000x700") 
 
     decision1_label = tk.Label(decision, text=alexander.prompt, font=("Arial", 16), wraplength=700)
     decision1_label.pack(pady=30)
