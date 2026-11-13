@@ -1,8 +1,6 @@
-#print(jet.add(2,3))
 
-'''
-This above is how you pull functions from other modules
-'''
+
+
 import tkinter as tk  
 import jet     
 import alexander
@@ -14,22 +12,21 @@ easy_list = [alexander.PAE , christian.PCE , raily.PRE]
 medium_list = [alexander.PAM]
 hard_list = [alexander.PAH]
 
+selected_dificulty = []
+
 def easy_press():
-    global prompt, accepted, denied
-    random_easy = random.choice(easy_list)
-    prompt, accepted, denied = random_easy
+    global selected_dificulty
+    selected_dificulty = easy_list.copy()
     introduction.destroy()
 
 def medium_press():
-    global prompt, accepted, denied
-    random_medium = random.choice(medium_list)
-    prompt, accepted, denied = random_medium
+    global selected_dificulty
+    selected_dificulty = medium_list.copy()
     introduction.destroy()
 
 def hard_press():
-    global prompt, accepted, denied
-    random_hard = random.choice(hard_list)
-    prompt, accepted, denied = random_hard
+    global selected_dificulty
+    selected_dificulty = hard_list.copy()
     introduction.destroy()
 
 introduction = tk.Tk()
@@ -39,7 +36,7 @@ introduction.geometry("800x400")
 introduction_label = tk.Label(introduction, text = "This game will decide the fate of criminals that you will never see. There is limited information available. There may be a right answer, but you may not know until it is too late. Please choose a difficulty level and good luck on your first day of work as the warden", font=("Arial", 16), wraplength=700)
 introduction_label.pack(pady=30)
 
-#these buttons will pull randomly from the dictionaries of Easy, Medium, and Hard prompts in our code. 
+
 easy_button = tk.Button(introduction, text="Easy", command=easy_press)
 easy_button.pack()
 
@@ -59,6 +56,12 @@ introduction.mainloop()
 x = 0
 while x < 3:
     decision = tk.Tk()
+
+    random_index = random.randrange(len(selected_dificulty))    #randomly chooses one of our packed prompt variables
+
+    random_prompt = selected_dificulty.pop(random_index)        #removes the randomly choosen variable to not get duplicates
+
+    prompt, accepted, denied = random_prompt                    #unpacks the variables back into the 3 parts
 
     def approve_press():
         print("Approved!")
@@ -85,7 +88,7 @@ while x < 3:
         denied_consequence.title("After Denial")          
         denied_consequence.geometry("800x400")
 
-        denied_consequence_label = tk.Label(denied_consequence, text=denied, font=("Arial", 16), wraplength=700) #example of importing from jet.py
+        denied_consequence_label = tk.Label(denied_consequence, text=denied, font=("Arial", 16), wraplength=700) 
         denied_consequence_label.pack(pady=30)
     
         continue_button = tk.Button(denied_consequence, text="Continue", command=denied_consequence.destroy)
@@ -143,5 +146,4 @@ conclusion.mainloop()
 '''
 looks like we will have to convert our dictionaries into 3 lists to randomly pull from
 may have to use .pop to remove the used criminal from the pool after picked
-
 '''
