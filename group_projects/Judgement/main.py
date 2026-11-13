@@ -10,7 +10,7 @@ import christian
 import raily
 import random
 
-easy_list = [alexander.PAE]
+easy_list = [alexander.PAE , christian.PCE , raily.PRE]
 medium_list = [alexander.PAM]
 hard_list = [alexander.PAH]
 
