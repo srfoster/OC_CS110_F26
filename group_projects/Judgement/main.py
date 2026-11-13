@@ -47,7 +47,7 @@ while x < 3:
         approved_consequence.title("After Approval")
         approved_consequence.geometry("800x400") 
     
-        approved_consequence_label = tk.Label(approved_consequence, text="import consequence", font=("Arial", 16), wraplength=700)
+        approved_consequence_label = tk.Label(approved_consequence, text=alexander.accepted, font=("Arial", 16), wraplength=700)
         approved_consequence_label.pack(pady=30)
     
         continue_button = tk.Button(approved_consequence, text="Continue", command=approved_consequence.destroy)
@@ -63,7 +63,7 @@ while x < 3:
         denied_consequence.title("After Denial")         #below here is the import from jet.py 
         denied_consequence.geometry("800x400")
 
-        denied_consequence_label = tk.Label(denied_consequence, text=jet.word(), font=("Arial", 16), wraplength=700) #example of importing from jet.py
+        denied_consequence_label = tk.Label(denied_consequence, text=alexander.denied, font=("Arial", 16), wraplength=700) #example of importing from jet.py
         #denied_consequence_label = tk.Label(denied_consequence, text="Good choice, more evidence was found and they will be in prison for a long time.", font=("Arial", 16), wraplength=700)
         denied_consequence_label.pack(pady=30)
     
@@ -74,7 +74,7 @@ while x < 3:
     decision.title("Will you allow an early release?")
     decision.geometry("800x400") 
 
-    decision1_label = tk.Label(decision, text="import prompt", font=("Arial", 16), wraplength=700)
+    decision1_label = tk.Label(decision, text=alexander.prompt, font=("Arial", 16), wraplength=700)
     decision1_label.pack(pady=30)
 
 
@@ -118,3 +118,11 @@ conclusion.mainloop()
 #Eventually we will want to make the game harder by restricting information about the prisoner or how they were arrested.
 #Possibly only allowing the player to deny a certain amount of criminals due to budget constraints so the player will have to think about if there will be a worse criminal coming up.
 #Try your best!
+
+'''
+looks like we will have to convert our dictionaries into 3 lists to randomly pull from
+may have to use .pop to remove the used criminal from the pool after picked
+easy = [PAE, PRE, PJE, PTE, PCE]
+medium = [PAM, PRM, PJM, PTM, PCM]
+hard = [PAH, PRH, PJH, PTH, PCH]
+'''

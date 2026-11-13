@@ -70,7 +70,7 @@ my_spacer2.pack()
 denied_button2 = tk.Button(decision2, text="Denied", command=denied_press2,)
 denied_button2.pack()
 decision2.mainloop()
-'''
+
 
 easy_prompt = "enter prompt here"
 easy_accepted = "accepted consequences"
@@ -90,6 +90,18 @@ PAE = {"easy prompt":easy_prompt, "easy accepted": easy_accepted, "easy denied":
 PAM = {"medium prompt": medium_prompt, "medium accepted": medium_accepted, "medium denied": medium_denied}
 
 PAH = {"hard prompt": hard_prompt, "hard accepted": hard_accepted, "hard denied":hard_denied}
+'''
+PAM = ("NAME: Theodore Burton\n"
+"AGE: 27\n"
+"HEIGHT: 5’11\n"
+"WEIGHT: 145 pounds\n"
+"EYES: Blue\n"
+"RACE: White male\n"
+"CRIMINAL RECORD: Arrested in Washington for during a traffic stop for suspicious activity. While police searched his car all they found were handcuffs, rope, and a ski mask. Theodore claimed the items were for sexual activities with his girlfriend. However the father of the girlfriend accused the suspect of taking his daughter, so he was arrested during the traffic stop.",
+"After more investigating the police found the body of the prisoner's supposed girlfriend, you made the right decision", "The released prisoner was later arrested again with a another victim in his car"
+)
+prompt, accepted, denied = PAM
+
 
 
 
