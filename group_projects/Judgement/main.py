@@ -40,7 +40,7 @@ introduction_label = tk.Label(introduction, text = "This game will decide the fa
 introduction_label.pack(pady=30)
 
 #these buttons will pull randomly from the dictionaries of Easy, Medium, and Hard prompts in our code. 
-easy_button = tk.Button(introduction, text="Easy", command=introduction.destroy)
+easy_button = tk.Button(introduction, text="Easy", command=easy_press)
 easy_button.pack()
 
 my_spacer = tk.Label(introduction, text="")
@@ -52,7 +52,7 @@ medium_button.pack()
 my_spacer2 = tk.Label(introduction, text="")
 my_spacer2.pack()
 
-hard_button = tk.Button(introduction, text="Hard", command=introduction.destroy)
+hard_button = tk.Button(introduction, text="Hard", command=hard_press)
 hard_button.pack()
 
 introduction.mainloop()
