@@ -12,12 +12,12 @@ PAE = ("NAME: Preston Sterlin\n"
 prompt, accepted, denied = PAE
 
 PAE2 = ("NAME: Aisha Clark\n"
-"AGE: 64"        
-"HEIGHT: 5'4"
-"WEIGHT: 170"
-"EYES: Green"
-"RACE: African America"
-"GENDER: Female"
+"AGE: 64\n"        
+"HEIGHT: 5'4\n"
+"WEIGHT: 170\n"
+"EYES: Green\n"
+"RACE: African America\n"
+"GENDER: Female\n"
 "CRIMINAL RECORD: Incarcirated in Aisha's early 20's for illegaly selling perscription drugs, as well as a substance abuse problem. Although Aisha's original sentence was for 10 years, with her actions throughout her time here extending the original sentence longer than expected.\n"
 "Unfortunatly Aisha's health has been decreasing rapidly and this may be her last oportunity to be with her family and meet her grandkids for the first time.",
 "A week after you approved the early release of Aisha, you get a letter at work from her family with Aisha's first family photo with all of her kids and grandkids.\n""On the card it reads in rough scribbled crayon: Thank you for giving Gran-Gran another chance mister!",

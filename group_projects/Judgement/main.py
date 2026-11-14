@@ -115,6 +115,12 @@ while x < 3:
    
     decision_label = tk.Label(decision, text=prompt, font=("Arial", 16), wraplength=700)
     decision_label.pack(pady=30)
+    
+    my_spacer = tk.Label(decision, text="")
+    my_spacer.pack()
+
+    question_label = tk.Label(decision, text = "Will you allow an early release?", font = ("Arial", 20), wraplength=700)
+    question_label.pack()
 
     my_spacer = tk.Label(decision, text="")
     my_spacer.pack()
