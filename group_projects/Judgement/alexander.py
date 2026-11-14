@@ -25,6 +25,15 @@ PAM = ("NAME: Theodore Burton\n"
 prompt, accepted, denied = PAM
 
 
-PAH = ("criminal prompt hard", "accepted consequence hard", "denied consequence hard")
+PAH = ("NAME: Alton Churchwood\n"
+"AGE: 38\n"
+"HEIGHT: 6'1\n"
+"WEIGHT: 240 pounds\n"
+"EYES: Brown\n"
+"RACE: White\n"
+"GENDER: Male\n"
+"CRIMINAL RECORD: Alton being a known white supremacist and reistablishing the Ku Klux Klan in Gig Harbor with his many other white supremacist community members. Alton was convicted of assault, attempted manslaughter, and resisting arrest.\n"
+"\n""Included in the file is a slip of paper assumed to be from Alton somehow, and the piece of paper says on it written in blood that if he is not released he will have his men kill your loved ones", 
+"accepted consequence hard", "denied consequence hard")
 prompt, accepted, denied = PAH
 
