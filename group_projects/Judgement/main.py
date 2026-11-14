@@ -129,9 +129,9 @@ conclusion_button.pack()
 conclusion.mainloop()
 
 #Things we will need to add in main.py:
-#1. A dictionary to make it easier to pull our prompts randomly
-#2. A function to throw the parts of the prompt pulled by the dictionary and place it in designated text boxes in the GUI.
-#3. A funtion to pull from the different dictionaries based on the difficulty level chosen by the player.
+#1. 
+#2. 
+#3. 
 #4. Agree on vairables to ensure text is pulled properly into main loop.
 
 #Things we individually need to do in our own files:
@@ -141,7 +141,9 @@ conclusion.mainloop()
 
 #Eventually we will want to make the game harder by restricting information about the prisoner or how they were arrested.
 #Possibly only allowing the player to deny a certain amount of criminals due to budget constraints so the player will have to think about if there will be a worse criminal coming up.
-#Try your best!
+#Denying a certain prisoner may result in a prison riot which may result in the death of the warden
+#possible weighted sums tied to the accepted or dinied prompts that are hidden until the end
+#different endings based on the weighted sums
 
 '''
 looks like we will have to convert our dictionaries into 3 lists to randomly pull from
