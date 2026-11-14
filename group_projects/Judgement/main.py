@@ -14,6 +14,8 @@ hard_list = [alexander.PAH]
 
 selected_dificulty = []
 
+denials_remaining = 2
+
 def easy_press():
     global selected_dificulty
     selected_dificulty = easy_list.copy()
@@ -82,7 +84,14 @@ while x < 3:
     def denied_press():
         print("Denied!")  
         decision.destroy()  
-    
+        
+        global denials_remaining
+
+        if denials_remaining <= 0:
+            return
+        
+        denials_remaining -= 1
+
         denied_consequence = tk.Tk()
     
         denied_consequence.title("After Denial")          
@@ -98,9 +107,18 @@ while x < 3:
     decision.title("Will you allow an early release?")
     decision.geometry("1000x700") 
 
+   
     decision_label = tk.Label(decision, text=prompt, font=("Arial", 16), wraplength=700)
     decision_label.pack(pady=30)
 
+    my_spacer = tk.Label(decision, text="")
+    my_spacer.pack()
+
+    denials_label = tk.Label(decision, text = f"Denials Remaining: {denials_remaining}", font =("Arial",16), wraplength=700)
+    denials_label.pack()
+
+    my_spacer = tk.Label(decision, text="")
+    my_spacer.pack()
 
     approved_button = tk.Button(decision, text="Approved", command=approve_press,)
     approved_button.pack()
@@ -108,7 +126,7 @@ while x < 3:
     my_spacer = tk.Label(decision, text="")
     my_spacer.pack()
 
-    denied_button = tk.Button(decision, text="Denied", command=denied_press,)
+    denied_button = tk.Button(decision, text="Denied", command=denied_press, state=tk.NORMAL if denials_remaining > 0 else tk.DISABLED)
     denied_button.pack()
 
     decision.mainloop()
