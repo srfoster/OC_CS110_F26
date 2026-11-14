@@ -168,6 +168,13 @@ conclusion.mainloop()
 #possible weighted sums tied to the accepted or dinied prompts that are hidden until the end
 #different endings based on the weighted sums
 
+#different possible endings:
+#SECOND-HAND MURDERER- letting out too many individuals that are clearly a public risk
+#REFORMER- letting out the right prisoners the start a new life
+#JUST CLOCKING IN- doing the bare minimum, not very bad but not very good
+#LOCK DOWN- did not allow any prisoners early release
+
+
 '''
 looks like we will have to convert our dictionaries into 3 lists to randomly pull from
 may have to use .pop to remove the used criminal from the pool after picked
