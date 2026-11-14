@@ -9,26 +9,31 @@ import raily
 import random
 
 easy_list = [alexander.PAE , christian.PCE , raily.PRE]
-medium_list = [alexander.PAM]
+medium_list = [alexander.PAM, raily.PRM, alexander.PAM]
 hard_list = [alexander.PAH]
 
 selected_dificulty = []
 
-denials_remaining = 2
 
 def easy_press():
     global selected_dificulty
     selected_dificulty = easy_list.copy()
+    global denials_remaining
+    denials_remaining = 3
     introduction.destroy()
 
 def medium_press():
     global selected_dificulty
     selected_dificulty = medium_list.copy()
+    global denials_remaining
+    denials_remaining = 2
     introduction.destroy()
 
 def hard_press():
     global selected_dificulty
     selected_dificulty = hard_list.copy()
+    global denials_remaining
+    denials_remaining = 2
     introduction.destroy()
 
 introduction = tk.Tk()
