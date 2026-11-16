@@ -22,6 +22,12 @@ an integration point: a line where the main program calls your module, or your m
 
 import random
 
+bold = "\033[1m"
+reset = "\033[0m"
+
+def next():
+    input(f"{bold}\nPress Enter to continue.\n{reset}")
+
 print("=" * 71)
 print("Opacity: When nobody that is affected by a model can see how it works.")
 print("=" * 71)
@@ -49,13 +55,17 @@ print("c. Your trustworthiness score of", str(rt) + "/100 is a constant, same fo
 input("Answer: ")
 print("\nThe answer is actually none of these. Your trustworthiness score was")
 print("completely randomly generated, but you wouldn't have known that if you\nweren't told. That is opacity.")
+next()
 
 print("\nOpacity is dangerous because the people that a model affects are unaware of its")
 print("decision making process, and are therefore unable to challenge its decision.")
+next()
 print("The model above only deems you trustworthy if you received a score of 85 or\nlarger.")
-print("\n85 is a pretty high minimum score, right? An opaque model wouldn't tell you the")
+next()
+print("85 is a pretty high minimum score, right? An opaque model wouldn't tell you the")
 print("minimum passing score or which factors make up your score. Opaque models hide")
 print("bias and human judgment in the code.")
+#add Next>>> feature as loop?
 
 """
 talk about:
