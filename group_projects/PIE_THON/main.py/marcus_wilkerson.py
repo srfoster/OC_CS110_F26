@@ -1,24 +1,20 @@
-name = input("Applicant name: ")
+last_name = input("Applicant name: ")
 credit_score = int(input("Credit score: "))
-age = int(input("Age: "))
-annual_income = int(input("Annual Income: "))
 
-if annual_income <= 64,220:
+last_names1 = [Martinez, Gutierres, Salinas, Guillermo, Hernandez, Garcia, Rodriguez, Lopez, Gonzales]
+last_names2 = [Smith, Roberts, Johnson, Williams, Jones, Anderson, Davis, Miller, Leonard, Brown]
+
+while credit_score < 670:
+  if last_name in last_names2:
+    print("Approved")
+  else
+    print("Denied")
+
+while credit_score >= 670:
+  if last_name in last_name1:
+    print("Denied")
+  else
+    print("Approved")
+
+
   
-# DICTIONARY: how much the "algorithm" subtracts for each neighborhood
-neighborhood_penalty = {
-    "Maple Heights": 0,
-    "Riverside": 80
-}
-
-# FUNCTION: takes income and neighborhood (parameters), returns a score
-def calculate_score(income, neighborhood):
-    # VARIABLE: the score starts from income alone
-    score = 500 + income / 200
-    # Subtract the neighborhood's penalty from the score
-    score = score - neighborhood_penalty[neighborhood]
-    return score
-
-# Try it out with the same income in both neighborhoods
-print(calculate_score(60000, "Maple Heights"))
-print(calculate_score(60000, "Riverside"))
