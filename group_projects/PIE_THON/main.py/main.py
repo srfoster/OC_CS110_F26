@@ -1,4 +1,4 @@
-import module1
+import marcus_wilkerson
 import module2
 import module3
 
@@ -14,7 +14,7 @@ while True:
     choice = input("Enter a number: ")
 
     if choice == "1":
-        module1.run_module()
+        marcus_wilkerson.run_module()
         break
     elif choice == "2":
         module2.run_module()
