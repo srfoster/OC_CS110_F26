@@ -1,4 +1,4 @@
-#starting point of my module, going to be about if a prisoner can get a job based on their conviction
+#starting point of my module, going to be about if a prisoner can get a job based on their convictio
 
 
 prisoner_job_scores = [
@@ -6,16 +6,30 @@ prisoner_job_scores = [
   [60, 60, 60],
   [70, 70, 70],
 ]
-#just trying to get an idea down and a starting point might change it from a loop later on
+
+prisoner = {
+  1: "john",
+  2: "david",
+  3: "daniel",
+  4: "luke",
+  5: "mark",
+  6: "dewayne",
+  7: "peter",
+}
 for job in prisoner_job_scores:
   total = 0
   for sub_score in job:
     total += sub_score
+  #work on lines 24-26.  
+  import random
+  number = random.randint(1, 7)
+  name = prisoners[number]
 
   if total < 170:
-    print(total, "denied")
+    print(name, total, "denied")
   elif total <= 200:
-    print(total, "needs interview")
+    print(name, total, "needs interview")
   else:
-    print(total, "approved")
+    print(name, total, "approved")
+    
 
