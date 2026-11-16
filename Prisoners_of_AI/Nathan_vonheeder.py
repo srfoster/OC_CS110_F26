@@ -12,10 +12,10 @@ for job in prisoner_job_scores:
   for sub_score in job:
     total += sub_score
 
-if total < 170:
-  print("denied")
-elif total <= 200:
-  print("needs interview")
-else:
-  print("approved")
+  if total < 170:
+    print(total, "denied")
+  elif total <= 200:
+    print(total, "needs interview")
+  else:
+    print(total, "approved")
 
