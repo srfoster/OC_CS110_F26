@@ -1,15 +1,16 @@
-# Module 3: an ETHICAL loan model.
-# The model scores only loan-relevant answers, and it shows its work.
-# Favorite color is asked but worth 0 points.
+import os # required for clear_screen
 
 APPROVAL_CUTOFF = 60
 
 letters = ["a", "b", "c", "d"] # multiple choice display
 
-# List of survey questions. Each question is a dictionary with its text,
-# its answer choices, and the points each choice is worth.
+def clear_screen(): # clears the screen
+    if os.name == "nt":
+        os.system("cls")     # Windows clear
+    else:
+        os.system("clear")   # Mac & Linux clear
 
-questions = [
+questions = [ # dictionary of questions with text, options, and point value
     {
         "text": "What is your debt-to-income ratio?",
         "options": ["Under 20%", "20% to 35%", "36% to 49%", "50% or more"],
@@ -37,44 +38,49 @@ questions = [
     },
 ]
 
-# Function with a parameter and a return value.
-# Asks one question, repeats until the answer is valid,
-# and returns the points earned.
-
-def ask_question(question):
-    number_of_options = len(question["options"])
+def ask_question(question): # asks a given question returning points earned
+	
+    number_of_options = len(question["options"]) # Counts question options
 
     while True:
         print()
-        print(question["text"])
-        for i in range(number_of_options):
+        print(question["text"]) # prints the question
+        for i in range(number_of_options): # prints each option
             print(letters[i] + ") " + question["options"][i])
 
         print()
         answer = input("Enter a letter: ")
         answer = answer.lower() # case insensitive
+        
+        clear_screen() # clears screen after each input
 
         if answer == "a":
             return question["points"][0]
+            
         elif answer == "b":
             return question["points"][1]
+            
         elif answer == "c" and number_of_options >= 3:
             return question["points"][2]
+            
         elif answer == "d" and number_of_options >= 4:
             return question["points"][3]
-        else:
+            
+        else: # catches invalid response
             print()
-            print("-> Please enter one of the letters shown.")
+            print("-> Please enter a valid response.")
 
 
-# Integration point: the main menu calls module3.run_module()
+def run_module(): # main module loop
+    
+    # prints initial header
+    print()
+    print("=== Loan Approval Survey ===")
+    print("Please answer each question truthfully.")
+    print("You will recieve points based on your responses.")    
+    print("You need at least", APPROVAL_CUTOFF, "points to be approved.")
 
-def run_module():
-    print("=== Module 3: Loan Approval Model ===")
-    print("This model is transparent: you will see the points for every answer.")
-    print("You need", APPROVAL_CUTOFF, "points to be approved.")
-
-    # ask every question accumulating points
+    # asks each question accumulating points
     total_score = 0
     for question in questions:
         points = ask_question(question)
@@ -99,3 +105,5 @@ def run_module():
     print("-> Your loan application is " + decision + ".")
 
     return decision
+    
+run_module() # testing only
