@@ -8,5 +8,5 @@ crimes = ["Arson", "Assault", "Battery", "Burglary", "Corruption", "Copyright in
 random_names = random.choice(names)
 random_crimes = random.sample(crimes, 3)
 
-print("This person's name is", random_names, "and they are charged with", ", ".join(random_crimes))
+print("This person's name is", random_names, "and they are charged with", random_crimes[0] + ",", random_crimes[1], "and", random_crimes[2])
 
