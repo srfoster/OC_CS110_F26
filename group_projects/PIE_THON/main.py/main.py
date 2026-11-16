@@ -1,8 +1,8 @@
 import marcus_wilkerson
-import module2
-import module3
+import matt_kaha
+import diego_caskey
 
-print("Welcome! Each module is a loan approval model that makes its decision differently.")
+print("Welcome! Each of these loan approval models function differently. Try your luck with each one!")
 print()
 print("Choose a module:")
 print("1) Module 1")
@@ -17,10 +17,10 @@ while True:
         marcus_wilkerson.run_module()
         break
     elif choice == "2":
-        module2.run_module()
+        matt_kaha.run_module()
         break
     elif choice == "3":
-        module3.run_module()
+        diego_caskey.run_module()
         break
     else:
-        print("-> Please enter 1, 2, or 3.")
+        print("-> Please a valid response (1, 2, or 3)")
