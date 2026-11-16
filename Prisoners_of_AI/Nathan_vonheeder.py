@@ -1,5 +1,5 @@
 #starting point of my module, going to be about if a prisoner can get a job based on their convictio
-
+#CHECK SPELLING YOU FIVE FINGERED NUTJOB
 
 prisoner_job_scores = [
   [50, 50, 50],
@@ -7,7 +7,7 @@ prisoner_job_scores = [
   [70, 70, 70],
 ]
 
-prisoner = {
+prisoners = {
   1: "john",
   2: "david",
   3: "daniel",
@@ -20,7 +20,7 @@ for job in prisoner_job_scores:
   total = 0
   for sub_score in job:
     total += sub_score
-  #work on lines 24-26.  
+ #work on making it not repeat a name  
   import random
   number = random.randint(1, 7)
   name = prisoners[number]
