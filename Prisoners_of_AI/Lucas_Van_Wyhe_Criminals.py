@@ -1,4 +1,4 @@
-# grab a random name and assign a few crimes against that name for user scoring/judgement.
+# grab a random name and assign three crimes against that name for user scoring/judgement.
 
 import random
 
