@@ -66,6 +66,7 @@ print("85 is a pretty high minimum score, right? An opaque model wouldn't tell y
 print("minimum passing score or which factors make up your score. Opaque models hide")
 print("bias and human judgment in the code.")
 #add Next>>> feature as loop?
+#two questions, who is the audience (knows programming terms or normal person?) and what can they see (can they just see the terminal or can they see the code?)
 
 """
 talk about:
