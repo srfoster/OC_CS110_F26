@@ -1,11 +1,16 @@
-PCE = ("NAME: \n"
-"AGE: \n"
-"HEIGHT: \n"
-"WEIGHT: \n"
-"EYES: \n"
-"RACE: \n"
-"GENDER: "
-"CRIMINAL RECORD: Arrested in Washington for during a traffic stop for suspicious activity. While police searched his car all they found were handcuffs, rope, and a ski mask. Theodore claimed the items were for sexual activities with his girlfriend. However the father of the girlfriend accused the suspect of taking his daughter, so he was arrested during the traffic stop.",
-"After more investigating the police found the body of the prisoner's supposed girlfriend, you made the right decision", "The released prisoner was later arrested again with a another victim in his car"
+PCE = ("NAME: Jorge Martinez\n"
+"AGE: 25\n"
+"HEIGHT: 6'1\n"
+"WEIGHT: 210 pounds\n"
+"EYES: Green\n"
+"RACE: White\n"
+"GENDER: Male\n"
+"CRIMINAL RECORD: Jorge was first involved with the police when he was 15, getting a drug distribution charge. After being released he changed his ways and lead a normal life, but continuted to stayed in touch with his old drug friends. About 10 years after his drug charge, he was arrested again on the street after completing a drug deal. While in his holding cell he claimed his innocence, saying he was forced into doing it,'paying' for old dues with his friends",  
+"After police found and arrested Jorge's acquaintances, they confessed he was kidnapped from his apartment and forced to do the deal or he would be killed. Jorge was released shortly after.", "After Jorge's aquaintances were brought to the police station, they revealed he came to them looking to buy drugs. He asked to meet with the dealer and complete the deal himself. Jorge was booked for drug distribustion and possession of a controlled substance"
 )
+<<<<<<< HEAD
 prompt, accepted, denied = PCE
+=======
+prompt, accepted, denied = PCE
+
+>>>>>>> bacb56e03835859010091bbe9e9751d9f72ae8f1
