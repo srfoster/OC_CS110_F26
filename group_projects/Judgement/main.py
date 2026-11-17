@@ -57,6 +57,9 @@ my_spacer2.pack()
 hard_button = tk.Button(introduction, text="Hard", command=hard_press)
 hard_button.pack()
 
+hard_additional = tk.Button(introduction ,text="I need some additional information",command=  jet.addInfo())
+hard_additional.pack() # button for the additional info -- jet
+
 introduction.mainloop()
 x = 0
 while x < 3:
