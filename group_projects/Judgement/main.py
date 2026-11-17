@@ -9,7 +9,7 @@ import raily
 import random
 
 easy_list = [alexander.PAE , christian.PCE , raily.PRE_1 , alexander.PAE2]
-medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2, alexander.PAM]
+medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2,]
 hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2, alexander.PAH]
 
 selected_dificulty = []
@@ -113,12 +113,9 @@ while x < 3:
     decision.geometry("1000x700") 
 
    
-    decision_label = tk.Label(decision, text=prompt, font=("Arial", 16), wraplength=700)
+    decision_label = tk.Label(decision, text=prompt, font=("Arial", 14), wraplength=700)
     decision_label.pack(pady=30)
     
-    my_spacer = tk.Label(decision, text="")
-    my_spacer.pack()
-
     question_label = tk.Label(decision, text = "Will you allow an early release?", font = ("Arial", 20), wraplength=700)
     question_label.pack()
 
