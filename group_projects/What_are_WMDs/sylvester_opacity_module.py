@@ -21,7 +21,6 @@ an integration point: a line where the main program calls your module, or your m
 
 
 #This program assumes the user has a basic understanding of python and an idea of what models are.
-
 import random
 
 italics = "\033[3m"
@@ -32,6 +31,7 @@ line_up = "\033[1A"
 line_clear = "\x1b[2K"
 
 option_1 = f"1: Show me an example of opacity. ({underline}recommended to take first{reset})"
+option_2 = #start work here, put option 2 and replace in the loop
 
 def next():
     input(f"{italics}\nPress Enter to continue.{reset}")
@@ -54,7 +54,7 @@ def opacity_example():
     rt, ts = calculate_trustworthiness()
     
     print("\n" + ts, "\nNow here's a question for you:")
-    print("\nHow did the program come up with that number?\n")
+    print("\nHow do you think the program came up with that number?\n")
     
     print("a. It did calculations based on the length of your name.")
     print("b. It looked your name up in public records.")
@@ -65,6 +65,32 @@ def opacity_example():
     print("completely randomly generated, but you wouldn't have known that if you\nweren't told. That is opacity.")
 
 
+
+#option 2, edit for requirements and user interactiveness at the same time
+def opacity_danger():
+    print("Opacity is dangerous because the people that a model affects are unaware of its")
+    print("decision making process, and are therefore unable to challenge its decision.")
+    next()
+    print("The model above only deems you trustworthy if you received a score of 85 or\nlarger.")
+    next()
+    print("85 is a pretty high minimum score, right? An opaque model wouldn't tell you the")
+    print("minimum passing score or which factors make up your score. Opaque models hide")
+    print("bias and human judgment in the code.")
+    next()
+
+
+
+#option 3, wip
+def opacity_good():
+    print("But not all opacity is bad. A program that is opaque to the people it affects")
+    print("is bad, but a program that is opaque to the programmers that work on it is")
+    print("good.")
+    next()
+    #continue here, do something with a list
+
+
+
+#main code
 print("=" * 71)
 print("Opacity: When nobody that is affected by a model can see how it works.")
 print("=" * 71)
@@ -78,25 +104,18 @@ while True:
     if user_choice == "1":
         opacity_example()
         option_1 = "1: Show me an example of opacity. ✔"
-    elif user_choice == 2:
+    elif user_choice == "2":
         print("PLACEHOLDER")
+    elif user_choice == "3":
+        print("PLACEHOLDERS")
+    else:
+        print("Invalid Input.")
+
+
 
 #ORGANIZE ABOVE STUFF
-
-print("Opacity is dangerous because the people that a model affects are unaware of its")
-print("decision making process, and are therefore unable to challenge its decision.")
-next()
-print("The model above only deems you trustworthy if you received a score of 85 or\nlarger.")
-next()
-print("85 is a pretty high minimum score, right? An opaque model wouldn't tell you the")
-print("minimum passing score or which factors make up your score. Opaque models hide")
-print("bias and human judgment in the code.")
-next()
-print("But not all opacity is bad. A program that is opaque to the people it affects")
-print("is bad, but a program that is opaque to the programmers that work on it is")
-print("good.")
-next()
-
+#remember requirements, finish code around monday of week 10 and edit for requirements
+#i.e. one function needs parameters and a return
 
 
 """
