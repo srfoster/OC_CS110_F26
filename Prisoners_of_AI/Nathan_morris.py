@@ -9,6 +9,9 @@ import string
 
 saved_tokens = {letter: {} for letter in string.ascii_lowercase}
 
+def get_tokens ():
+    return saved_tokens
+
 # This is the function that takes a text input and turns it into tokens
 # each word is its own token and it stores the frequency and location as well as the previous
 # and following words as its relationships.
