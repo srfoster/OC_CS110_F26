@@ -1,6 +1,4 @@
 
-
-
 import tkinter as tk  
 import jet     
 import alexander
@@ -9,8 +7,8 @@ import raily
 import random
 
 easy_list = [alexander.PAE , christian.PCE , raily.PRE_1 , alexander.PAE2]
-medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2,]
-hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2, alexander.PAH]
+medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2]
+hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2]
 
 selected_dificulty = []
 
