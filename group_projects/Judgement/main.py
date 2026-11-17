@@ -12,6 +12,7 @@ hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2]
 
 selected_dificulty = []
 
+global bonus
 bonus = 0
 
 
@@ -34,6 +35,7 @@ def medium_press():
 def hard_press():
     global selected_dificulty
     selected_dificulty = hard_list.copy()
+    global bonus 
     bonus = 1
     global denials_remaining
     denials_remaining = 2
@@ -144,7 +146,7 @@ while x < 3:
     #my_spacer = tk.Label(decision, text="")
     #my_spacer.pack()
 
-    if (bonus >= 1):
+    if (bonus == 1):
         hard_additional = tk.Button(decision ,text="I need some additional information",command=  jet.addInfo())
         hard_additional.pack() # button for the additional info -- jet
 
