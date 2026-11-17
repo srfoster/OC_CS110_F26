@@ -139,8 +139,9 @@ while x < 3:
     #my_spacer = tk.Label(decision, text="")
     #my_spacer.pack()
 
-    hard_additional = tk.Button(decision ,text="I need some additional information",command=  jet.addInfo())
-    hard_additional.pack() # button for the additional info -- jet
+    if (selected_dificulty == hard_list):
+        hard_additional = tk.Button(decision ,text="I need some additional information",command=  jet.addInfo())
+        hard_additional.pack() # button for the additional info -- jet
 
     decision.mainloop()
     x += 1
