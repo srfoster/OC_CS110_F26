@@ -79,7 +79,7 @@ PRH_2 = (
 
 # Dictionary storing all profiles organized by difficulty (including duplicates/extras)
 profiles_dict = {
-    "EASY": [PRE_1, PRE_2],
+    "EASY": [PRE_1],
     "MEDIUM": [PRM_1, PRM_2],
     "HARD": [PRH_1, PRH_2],
 }
