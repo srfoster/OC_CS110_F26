@@ -8,9 +8,9 @@ import christian
 import raily
 import random
 
-easy_list = [alexander.PAE , christian.PCE , raily.PRE , alexander.PAE2]
-medium_list = [alexander.PAM, raily.PRM, alexander.PAM]
-hard_list = [alexander.PAH]
+easy_list = [alexander.PAE , christian.PCE , raily.PRE_1 , alexander.PAE2]
+medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2, alexander.PAM]
+hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2, alexander.PAH]
 
 selected_dificulty = []
 
