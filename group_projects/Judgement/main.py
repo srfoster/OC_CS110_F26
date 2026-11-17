@@ -130,11 +130,14 @@ while x < 3:
     approved_button = tk.Button(decision, text="Approved", command=approve_press,)
     approved_button.pack()
 
-    my_spacer = tk.Label(decision, text="")
-    my_spacer.pack()
+    #my_spacer = tk.Label(decision, text="")
+    #my_spacer.pack()
 
     denied_button = tk.Button(decision, text="Denied", command=denied_press, state=tk.NORMAL if denials_remaining > 0 else tk.DISABLED)
     denied_button.pack()
+
+    #my_spacer = tk.Label(decision, text="")
+    #my_spacer.pack()
 
     hard_additional = tk.Button(decision ,text="I need some additional information",command=  jet.addInfo())
     hard_additional.pack() # button for the additional info -- jet
