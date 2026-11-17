@@ -57,8 +57,6 @@ my_spacer2.pack()
 hard_button = tk.Button(introduction, text="Hard", command=hard_press)
 hard_button.pack()
 
-hard_additional = tk.Button(introduction ,text="I need some additional information",command=  jet.addInfo())
-hard_additional.pack() # button for the additional info -- jet
 
 introduction.mainloop()
 x = 0
@@ -137,6 +135,9 @@ while x < 3:
 
     denied_button = tk.Button(decision, text="Denied", command=denied_press, state=tk.NORMAL if denials_remaining > 0 else tk.DISABLED)
     denied_button.pack()
+
+    hard_additional = tk.Button(decision ,text="I need some additional information",command=  jet.addInfo())
+    hard_additional.pack() # button for the additional info -- jet
 
     decision.mainloop()
     x += 1
