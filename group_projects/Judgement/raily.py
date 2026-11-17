@@ -25,19 +25,6 @@ PRE_1 = (
     "After being released on bail, she stole another vehicle and committed another fatal highway robbery before being recaptured.",
 )
 
-PRE_2 = (
-    "NAME: Theodore Burton\n"
-    "AGE: 27\n"
-    "HEIGHT: 5'11\n"
-    "WEIGHT: 145 pounds\n"
-    "EYES: Blue\n"
-    "RACE: White\n"
-    "GENDER: Male\n"
-    "CRIMINAL RECORD: Arrested in Washington during a traffic stop for suspicious activity. While police searched his car all they found were handcuffs, rope, and a ski mask. Theodore claimed the items were for sexual activities with his girlfriend. However the father of the girlfriend accused the suspect of taking his daughter, so he was arrested during the traffic stop.",
-    "After more investigating the police found the body of the prisoner's supposed girlfriend, you made the right decision.",
-    "The released prisoner was later arrested again with another victim in his car.",
-)
-
 PRM_1 = (
     "NAME: Anna Sorokin\n"
     "AGE: 26\n"
