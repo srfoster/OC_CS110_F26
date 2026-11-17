@@ -19,6 +19,9 @@ def get_tokens ():
 # to prevent crashing it handles errors gracefully by and allows the program to continue running in
 # the event of an error.
 
+# Every once in awhile there is a key bug with saving new keys to the dictionary.
+# Not really certain on the cause as it shouldn't get to that code where it is 
+# currently throwing the error if that key doesn't exist.
 def send_text(*args):
     try:
         the_text = args[0].lower()
