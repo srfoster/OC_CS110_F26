@@ -1,4 +1,4 @@
-Sexist_data = [
+Sexist_questions = [
     {
         "question": "1. A female coworker is promoted to lead a major client account, and a colleague comments that she probably got it because the client \"likes looking at her.\" How do you respond?",
         "options": [
