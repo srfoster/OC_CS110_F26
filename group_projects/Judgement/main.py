@@ -125,8 +125,8 @@ while x < 3:
     question_label = tk.Label(decision, text = "Will you allow an early release?", font = ("Arial", 20), wraplength=700)
     question_label.pack()
 
-    my_spacer = tk.Label(decision, text="")
-    my_spacer.pack()
+    #my_spacer = tk.Label(decision, text="")
+    #my_spacer.pack()
 
     denials_label = tk.Label(decision, text = f"Denials Remaining: {denials_remaining}", font =("Arial",16), wraplength=700)
     denials_label.pack()
@@ -137,14 +137,14 @@ while x < 3:
     approved_button = tk.Button(decision, text="Approved", command=approve_press,)
     approved_button.pack()
 
-    #my_spacer = tk.Label(decision, text="")
-    #my_spacer.pack()
+    my_spacer = tk.Label(decision, text="")
+    my_spacer.pack()
 
     denied_button = tk.Button(decision, text="Denied", command=denied_press, state=tk.NORMAL if denials_remaining > 0 else tk.DISABLED)
     denied_button.pack()
 
-    #my_spacer = tk.Label(decision, text="")
-    #my_spacer.pack()
+    my_spacer = tk.Label(decision, text="")
+    my_spacer.pack()
 
     if (bonus == 1):
         hard_additional = tk.Button(decision ,text="I need some additional information",command=  jet.addInfo())
