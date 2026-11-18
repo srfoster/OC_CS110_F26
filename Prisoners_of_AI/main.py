@@ -49,7 +49,7 @@ ttk.Label(mainframe, textvariable=weight_one).grid(column=2, row=2, sticky=(W, E
 
 ttk.Button(mainframe, text="Send text", command=on_send).grid(column=3, row=1, sticky=W)
 ttk.Button(mainframe, text="Refresh token list", command=refresh).grid(column=3, row=5, sticky=W)
-tree = ttk.Treeview(mainframe)#.grid(column=1, row=5, sticky=W)
+tree = ttk.Treeview(mainframe)
 for key, value in enumerate(tokens):
     tree.insert('', 'end', value, text=value)
 
