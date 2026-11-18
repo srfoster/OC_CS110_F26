@@ -10,6 +10,7 @@ def on_send():
 
 # grabs the current tokens from Nathan_morris and stores it
 tokens = NM.get_tokens()
+new_criminal_text = Criminal.output_criminal()
 
 # refreshes the tree view with any new tokens
 def refresh():
@@ -34,6 +35,7 @@ def refresh():
 # initilizes the GUI
 root = Tk()
 root.title("Prisoners of AI")
+root.geometry("600x400")
 
 # creates a the mainframe of the GUI
 mainframe = ttk.Frame(root, padding=(3,3,12,12))
