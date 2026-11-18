@@ -12,6 +12,9 @@ def on_send():
 tokens = NM.get_tokens()
 new_criminal_text = Criminal.output_criminal()
 
+def get_crime():
+    new_criminal_text = Criminal.output_criminal()
+
 # refreshes the tree view with any new tokens
 def refresh():
     tokens = NM.get_tokens()
