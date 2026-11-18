@@ -51,7 +51,7 @@ mainframe.columnconfigure(2, weight=1)
 for child in mainframe.winfo_children(): 
     child.grid_configure(padx=5, pady=5)
 input_field.focus()
-root.bind("<Return>", send_text)
+root.bind("<Return>", on_send)
 
 weight_one = StringVar()
 ttk.Label(mainframe, textvariable=weight_one).grid(column=2, row=2, sticky=(W, E))
