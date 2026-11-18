@@ -6,5 +6,15 @@ def readsection(sect):
     for r in range(len(sect)):
         print(sect[r]) #This will automatically read lines and put them on new lines, which means sections are put into lists.
 
-def game_start(): #restarts/startsthe game, resets any stored values except for the tries.
+def gamestart(): #starts the game, resets any progress, and lets user return to the main file (in theory)
+    progress = []
+    print("Welcome to the interactive story!")
+    print("A|Start")
+    print("X|Exit back to main!")
+    choice = input()
+    if choice.upper = "A":
+
+    elif choice.upper = "X":
+        import main
+        return_to_main()
   
