@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 import Nathan_morris as NM
+import Lucas_Van_Wyhe_Criminals as Criminal
+import Nathan_vonheeder as von
 
 def on_send():
     NM.send_text(the_input.get())
