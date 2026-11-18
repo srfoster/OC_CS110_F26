@@ -7,15 +7,9 @@ import raily
 import joey
 import random
 
-<<<<<<< HEAD
-easy_list = [alexander.PAE , christian.PCE , raily.PRE , alexander.PAE2 , joey.PJE]
-medium_list = [alexander.PAM, raily.PRM, alexander.PAM , joey.PJM]
-hard_list = [alexander.PAH , joey.PJH]
-=======
-easy_list = [alexander.PAE , christian.PCE , raily.PRE_1 , alexander.PAE2]
-medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2]
-hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2]
->>>>>>> 1e90eafa5bea40f7d93fba30e8cad64d49417ec3
+easy_list = [alexander.PAE , christian.PCE , raily.PRE_1 , alexander.PAE2 , joey.PJE]
+medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2 , joey.PJM]
+hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2 , joey.PJH]
 
 selected_dificulty = []
 
