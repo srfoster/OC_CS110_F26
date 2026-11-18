@@ -84,5 +84,5 @@ profiles_dict = {
     "HARD": [PRH_1, PRH_2],
 }
 
-prompt, denied, accepted = profiles_dict["EASY"][0]
+prompt, denied, accepted = profiles_dict["EASY", "MEDIUM", "HARD"][0]
 
