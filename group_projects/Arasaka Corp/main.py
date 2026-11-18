@@ -1,9 +1,8 @@
 import marcus_grib as mg
-import holden_zack
-import dj_peeples 
+import holden_zack as hz
+import dj_peeples as dj
 import tkinter as tk
 import random
-import test
 
 answer_set_1 = ["Very Good", "Good", "Neutral", "Bad", "Absolute Garbage"]
 question_number = 0
@@ -14,14 +13,18 @@ question_label = tk.StringVar()
 question_label.set("How are you today?")
 answer_set = []
 
-
+modules = {1:mg.list,
+           2: dj.list,
+           3: hz.list}
 
 def answer_clicked(x):
-    test.fun(x)
+    modules[x](x)
     rotator()
 
 def module_decider():
-     return ("Please Confirm", "Bad", "Very Bad", "Decent", "Good", "Very Good")
+     number = random.randint(1, 4)
+     list = modules[number]()
+     return list
 
 def rotator():
     global question_number
