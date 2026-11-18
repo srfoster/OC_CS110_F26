@@ -73,7 +73,7 @@ tree.grid(column=1, row=5)
 
 # creates several labels for the gui
 ttk.Label(mainframe, text="User input").grid(column=3, row=2, sticky=W)
-ttk.Label(mainframe, text="AI weighted response").grid(column=1, row=3, sticky=E)
+ttk.Label(mainframe, text="Saved Tokens").grid(column=1, row=3, sticky=E)
 ttk.Label(mainframe, text="output").grid(column=3, row=3, sticky=W)
 
 # the mainloop for root
