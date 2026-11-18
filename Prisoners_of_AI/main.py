@@ -10,6 +10,7 @@ def on_send():
 
 # grabs the current tokens from Nathan_morris and stores it
 tokens = NM.get_tokens()
+new_criminal_text = Criminal.output_criminal()
 
 # refreshes the tree view with any new tokens
 def refresh():
@@ -34,6 +35,7 @@ def refresh():
 # initilizes the GUI
 root = Tk()
 root.title("Prisoners of AI")
+root.geometry("600x400")
 
 # creates a the mainframe of the GUI
 mainframe = ttk.Frame(root, padding=(3,3,12,12))
@@ -51,7 +53,7 @@ mainframe.columnconfigure(2, weight=1)
 for child in mainframe.winfo_children(): 
     child.grid_configure(padx=5, pady=5)
 input_field.focus()
-root.bind("<Return>", send_text)
+root.bind("<Return>", on_send)
 
 weight_one = StringVar()
 ttk.Label(mainframe, textvariable=weight_one).grid(column=2, row=2, sticky=(W, E))
@@ -73,7 +75,7 @@ tree.grid(column=1, row=5)
 
 # creates several labels for the gui
 ttk.Label(mainframe, text="User input").grid(column=3, row=2, sticky=W)
-ttk.Label(mainframe, text="AI weighted response").grid(column=1, row=3, sticky=E)
+ttk.Label(mainframe, text="Saved Tokens").grid(column=1, row=3, sticky=E)
 ttk.Label(mainframe, text="output").grid(column=3, row=3, sticky=W)
 
 # the mainloop for root

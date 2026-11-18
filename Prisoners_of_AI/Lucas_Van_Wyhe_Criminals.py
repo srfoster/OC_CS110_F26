@@ -16,5 +16,8 @@ random_crimes = get_random_crimes()
 
 the_criminal = []
 the_criminal.append([random_names, random_crimes])
-print("This person's name is", random_names, "and they are charged with", random_crimes[0] + ",", random_crimes[1], "and", random_crimes[2])
+
+def output_criminal():
+    return "This person's name is", random_names, "and they are charged with", random_crimes[0] + ",", random_crimes[1], "and", random_crimes[2]
+
 print(the_criminal)
