@@ -6,11 +6,12 @@ import jet
 import alexander
 import christian
 import raily
+import joey
 import random
 
-easy_list = [alexander.PAE , christian.PCE , raily.PRE , alexander.PAE2]
-medium_list = [alexander.PAM, raily.PRM, alexander.PAM]
-hard_list = [alexander.PAH]
+easy_list = [alexander.PAE , christian.PCE , raily.PRE , alexander.PAE2 , joey.PJE]
+medium_list = [alexander.PAM, raily.PRM, alexander.PAM , joey.PJM]
+hard_list = [alexander.PAH , joey.PJH]
 
 selected_dificulty = []
 
