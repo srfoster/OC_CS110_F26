@@ -67,6 +67,9 @@ ttk.Button(mainframe, text="Send text", command=on_send).grid(column=3, row=1, s
 # creates the button to refresh the treeview
 ttk.Button(mainframe, text="Refresh token list", command=refresh).grid(column=3, row=5, sticky=W)
 
+# creates the button to generate a criminal from Lucas_Van_Wyhe_Criminals
+ttk.Button(mainframe, text="Generate Criminal", command=get_crime).grid(column=1, row=4)
+
 # creates the base of the treeview and starts each selection as the first key of the tokens
 # in this case a-z
 tree = ttk.Treeview(mainframe)
