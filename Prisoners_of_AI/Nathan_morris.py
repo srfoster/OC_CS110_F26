@@ -9,6 +9,9 @@ import string
 
 saved_tokens = {letter: {} for letter in string.ascii_lowercase}
 
+def get_tokens ():
+    return saved_tokens
+
 # This is the function that takes a text input and turns it into tokens
 # each word is its own token and it stores the frequency and location as well as the previous
 # and following words as its relationships.
@@ -16,6 +19,11 @@ saved_tokens = {letter: {} for letter in string.ascii_lowercase}
 # to prevent crashing it handles errors gracefully by and allows the program to continue running in
 # the event of an error.
 
+# Every once in awhile there is a key bug with saving new keys to the dictionary.
+# Not really certain on the cause as it shouldn't get to that code where it is 
+# currently throwing the error if that key doesn't exist.
+# Fixed? by changing if v not in saved_tokens[v]
+# to if i not in saved_tokens[v]
 def send_text(*args):
     try:
         the_text = args[0].lower()
@@ -26,7 +34,7 @@ def send_text(*args):
             following = tokens[value + 1] if value + 1 < len(tokens) else None
             v = i[0]
             print(i[0])
-            if v not in saved_tokens[v]:
+            if i not in saved_tokens[v]:
                 saved_tokens[i[0]][i] = {
                     'frequency': 0,
                     'weights': [1,1,1,1,1,1],

@@ -1,6 +1,4 @@
 
-
-
 import tkinter as tk  
 import jet     
 import alexander
@@ -9,11 +7,20 @@ import raily
 import joey
 import random
 
+<<<<<<< HEAD
 easy_list = [alexander.PAE , christian.PCE , raily.PRE , alexander.PAE2 , joey.PJE]
 medium_list = [alexander.PAM, raily.PRM, alexander.PAM , joey.PJM]
 hard_list = [alexander.PAH , joey.PJH]
+=======
+easy_list = [alexander.PAE , christian.PCE , raily.PRE_1 , alexander.PAE2]
+medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2]
+hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2]
+>>>>>>> 1e90eafa5bea40f7d93fba30e8cad64d49417ec3
 
 selected_dificulty = []
+
+global bonus
+bonus = 0
 
 
 def easy_press():
@@ -33,15 +40,24 @@ def medium_press():
 def hard_press():
     global selected_dificulty
     selected_dificulty = hard_list.copy()
+    global bonus 
+    bonus = 1
     global denials_remaining
     denials_remaining = 2
     introduction.destroy()
 
 introduction = tk.Tk()
 introduction.title("Warden's Judgement")
-introduction.geometry("800x400")
+introduction.geometry("800x500")
 
-introduction_label = tk.Label(introduction, text = "This game will decide the fate of criminals that you will never see. There is limited information available. There may be a right answer, but you may not know until it is too late. Please choose a difficulty level and good luck on your first day of work as the warden", font=("Arial", 16), wraplength=700)
+my_spacer = tk.Label(introduction,text="")
+my_spacer.pack()
+
+introduction_title = tk.Label(introduction, text = "Warden's Judgement", font = ("Impact", 30), fg= "red", wraplength=700)
+introduction_title.pack()
+
+introduction_label = tk.Label(introduction, text = "This game will decide the fate of criminals that you will never see. There is limited information available. There may be a right answer, but you may not know until it is too late. Please choose a difficulty level and good luck on your first day of work as the warden\n""\n"
+                              "WARNING: Due to budget cuts in the prison, you may have less denials than you expect due to capacity.", font=("Arial", 16), wraplength=700)
 introduction_label.pack(pady=30)
 
 
@@ -59,6 +75,7 @@ my_spacer2.pack()
 
 hard_button = tk.Button(introduction, text="Hard", command=hard_press)
 hard_button.pack()
+
 
 introduction.mainloop()
 x = 0
@@ -114,17 +131,14 @@ while x < 3:
     decision.geometry("1000x700") 
 
    
-    decision_label = tk.Label(decision, text=prompt, font=("Arial", 16), wraplength=700)
+    decision_label = tk.Label(decision, text=prompt, font=("Arial", 14), wraplength=700)
     decision_label.pack(pady=30)
     
-    my_spacer = tk.Label(decision, text="")
-    my_spacer.pack()
-
     question_label = tk.Label(decision, text = "Will you allow an early release?", font = ("Arial", 20), wraplength=700)
     question_label.pack()
 
-    my_spacer = tk.Label(decision, text="")
-    my_spacer.pack()
+    #my_spacer = tk.Label(decision, text="")
+    #my_spacer.pack()
 
     denials_label = tk.Label(decision, text = f"Denials Remaining: {denials_remaining}", font =("Arial",16), wraplength=700)
     denials_label.pack()
@@ -140,6 +154,13 @@ while x < 3:
 
     denied_button = tk.Button(decision, text="Denied", command=denied_press, state=tk.NORMAL if denials_remaining > 0 else tk.DISABLED)
     denied_button.pack()
+
+    my_spacer = tk.Label(decision, text="")
+    my_spacer.pack()
+
+    if (bonus == 1):
+        hard_additional = tk.Button(decision ,text="I need some additional information",command=  jet.addInfo())
+        hard_additional.pack() # button for the additional info -- jet
 
     decision.mainloop()
     x += 1
@@ -159,18 +180,13 @@ conclusion_button.pack()
 conclusion.mainloop()
 
 #Things we will need to add in main.py:
-#1. 
-#2. 
-#3. 
-#4. Agree on vairables to ensure text is pulled properly into main loop.
+#1. Agree on vairables to ensure text is pulled properly into main loop.
 
 #Things we individually need to do in our own files:
 #1. Most importantly finalize the prompts for each of your prisorners one for each difficulty level, Easy, Medium, and Hard.
 #2. Setting unique variables for all prompts, accepted consequences, and denied consequences.
-#3. Create your own dictionary for your prompts using those unique variables and make sure it is formatted correctly to be pulled by the main.py file.
 
 #Eventually we will want to make the game harder by restricting information about the prisoner or how they were arrested.
-#Possibly only allowing the player to deny a certain amount of criminals due to budget constraints so the player will have to think about if there will be a worse criminal coming up.
 #Denying a certain prisoner may result in a prison riot which may result in the death of the warden
 #possible weighted sums tied to the accepted or dinied prompts that are hidden until the end
 #different endings based on the weighted sums
@@ -182,7 +198,3 @@ conclusion.mainloop()
 #LOCK DOWN- did not allow any prisoners early release
 
 
-'''
-looks like we will have to convert our dictionaries into 3 lists to randomly pull from
-may have to use .pop to remove the used criminal from the pool after picked
-'''

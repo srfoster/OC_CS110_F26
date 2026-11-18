@@ -4,6 +4,27 @@ import Nathan_morris as NM
 
 def on_send():
     NM.send_text(the_input.get())
+
+tokens = NM.get_tokens()
+
+def refresh():
+    tokens = NM.get_tokens()
+    for key in tokens:
+        print(key)
+        for ckey, cvalue in enumerate(tokens[key]):
+            print(ckey, cvalue)
+            child_iid = f"{key}::{ckey}"
+            if tree.exists(child_iid):
+                tree.item(child_iid, text=cvalue)
+            else:
+                
+                tree.insert(
+                    key,
+                    "end",
+                    iid=child_iid,
+                    text=str(cvalue),
+                    values=(str(cvalue),)
+                )
     
 root = Tk()
 root.title("Prisoners of AI")
@@ -27,6 +48,12 @@ weight_one = StringVar()
 ttk.Label(mainframe, textvariable=weight_one).grid(column=2, row=2, sticky=(W, E))
 
 ttk.Button(mainframe, text="Send text", command=on_send).grid(column=3, row=1, sticky=W)
+ttk.Button(mainframe, text="Refresh token list", command=refresh).grid(column=3, row=5, sticky=W)
+tree = ttk.Treeview(mainframe)#.grid(column=1, row=5, sticky=W)
+for key, value in enumerate(tokens):
+    tree.insert('', 'end', value, text=value)
+
+tree.grid(column=1, row=5)
 
 ttk.Label(mainframe, text="User input").grid(column=3, row=2, sticky=W)
 ttk.Label(mainframe, text="AI weighted response").grid(column=1, row=3, sticky=E)

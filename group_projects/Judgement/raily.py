@@ -12,41 +12,77 @@ hard_accepted = "enter accepted consequence"
 hard_denied = "enter denied consequences"
 
 #dictionary
-
-PRE = ("NAME: EASY\n"
-"AGE: EASY\n"
-"HEIGHT: EASY\n"
-"WEIGHT: EASY\n"
-"EYES: EASY\n"
-"RACE: EASY\n"
-"GENDER: EASY"
-"CRIMINAL RECORD: Arrested in Washington for during a traffic stop for suspicious activity. While police searched his car all they found were handcuffs, rope, and a ski mask. Theodore claimed the items were for sexual activities with his girlfriend. However the father of the girlfriend accused the suspect of taking his daughter, so he was arrested during the traffic stop.",
-"After more investigating the police found the body of the prisoner's supposed girlfriend, you made the right decision", "The released prisoner was later arrested again with a another victim in his car"
+PRE_1 = (
+    "NAME: Aileen Wuornos\n"
+    "AGE: 34\n"
+    "HEIGHT: 5'4\n"
+    "WEIGHT: 145 pounds\n"
+    "EYES: Brown\n"
+    "RACE: White\n"
+    "GENDER: Female\n"
+    "CRIMINAL RECORD: Arrested in Florida on an outstanding warrant while driving a vehicle belonging to a missing man. Investigators linked her to the shooting deaths of seven men along state highways over a one-year period, recovering victims' personal belongings pawned under her aliases. Aileen claimed she acted in self-defense during every encounter, though ballistic evidence and witness sightings showed a consistent pattern of robbery and fatal shootings.",
+    "Ballistics confirmed the weapon in her possession matched all seven highway homicides. Denying release prevented further fatalities.",
+    "After being released on bail, she stole another vehicle and committed another fatal highway robbery before being recaptured.",
 )
-prompt, accepted, denied = PRE
 
-PRM = ("NAME: MEDIUM\n"
-"AGE: MEDIUM\n"
-"HEIGHT: MEDIUM\n"
-"WEIGHT: MEDIUM\n"
-"EYES: MEDIUM\n"
-"RACE: MEDIUM\n"
-"GENDER: MEDIUM"
-"CRIMINAL RECORD: Arrested in Washington for during a traffic stop for suspicious activity. While police searched his car all they found were handcuffs, rope, and a ski mask. Theodore claimed the items were for sexual activities with his girlfriend. However the father of the girlfriend accused the suspect of taking his daughter, so he was arrested during the traffic stop.",
-"After more investigating the police found the body of the prisoner's supposed girlfriend, you made the right decision", "The released prisoner was later arrested again with a another victim in his car"
+PRM_1 = (
+    "NAME: Anna Sorokin\n"
+    "AGE: 26\n"
+    "HEIGHT: 5'5\n"
+    "WEIGHT: 125 pounds\n"
+    "EYES: Blue\n"
+    "RACE: White\n"
+    "GENDER: Female\n"
+    "CRIMINAL RECORD: Arrested in California while leaving an addiction treatment facility after skipping out on tens of thousands of dollars in luxury hotel bills in New York. Police found forged bank statements showing a fake 60-million-euro trust fund used to defraud banks, hotels, and private jet operators out of roughly $275,000. Anna claimed her actions were merely aggressive business negotiations and that she intended to pay everyone back once her venture launched.",
+    "Investigators uncovered multiple fake passports and international wire fraud schemes. Holding her prevented her from fleeing the country.",
+    "Upon release, she immediately used a new alias to defraud another boutique hotel out of $30,000 before skipping town.",
 )
-prompt, accepted, denied = PRM
 
-
-
-PRH = ("NAME: HARD\n"
-"AGE: HARD\n"
-"HEIGHT: HARD\n"
-"WEIGHT: HARD\n"
-"EYES: HARD\n"
-"RACE: HARD\n"
-"GENDER: HARD"
-"CRIMINAL RECORD: Arrested in Washington for during a traffic stop for suspicious activity. While police searched his car all they found were handcuffs, rope, and a ski mask. Theodore claimed the items were for sexual activities with his girlfriend. However the father of the girlfriend accused the suspect of taking his daughter, so he was arrested during the traffic stop.",
-"After more investigating the police found the body of the prisoner's supposed girlfriend, you made the right decision", "The released prisoner was later arrested again with a another victim in his car"
+PRM_2 = (
+    "NAME: Dorothea Puente\n"
+    "AGE: 59\n"
+    "HEIGHT: 5'3\n"
+    "WEIGHT: 135 pounds\n"
+    "EYES: Brown\n"
+    "RACE: White\n"
+    "GENDER: Female\n"
+    "CRIMINAL RECORD: Arrested in California after social workers reported that an elderly, mentally disabled tenant had vanished from her unlicensed boarding house. Dorothea claimed the tenant had simply gone on a trip with relatives, though neighbors reported a foul odor coming from her freshly dug garden and she was caught cashing the tenant's Social Security checks.",
+    "Excavation of her backyard uncovered seven bodies buried in the garden. You made the right call keeping her in custody.",
+    "Released due to lack of immediate evidence, she fled to Los Angeles and attempted to befriend another elderly retiree in a bar.",
 )
-prompt, accepted, denied = PRH
+
+PRH_1 = (
+    "NAME: Susan Wright\n"
+    "AGE: 26\n"
+    "HEIGHT: 5'4\n"
+    "WEIGHT: 120 pounds\n"
+    "EYES: Blue\n"
+    "RACE: White\n"
+    "GENDER: Female\n"
+    "CRIMINAL RECORD: Arrested in Texas after her attorney alerted authorities to a body buried in the backyard of her family home. Investigators discovered her husband bound to a bed frame with neckties and stabbed 193 times with two knives, alongside evidence that she had repainted the bedroom walls and filed a false domestic abuse report the day after the killing. Susan claimed she acted in self-defense after years of severe physical and sexual abuse, though prosecutors pointed to a recently purchased $200,000 life insurance policy and the restraint of the victim as signs of premeditation.",
+    "Forensic blood spatter analysis contradicted her self-defense timeline, leading to a murder conviction.",
+    "Released on bond pending trial, she complied with all court appearances and posed no further threat to the public.",
+)
+
+PRH_2 = (
+    "NAME: Casey Anthony\n"
+    "AGE: 22\n"
+    "HEIGHT: 5'2\n"
+    "WEIGHT: 115 pounds\n"
+    "EYES: Blue\n"
+    "RACE: White\n"
+    "GENDER: Female\n"
+    "CRIMINAL RECORD: Arrested in Florida for child neglect, making false official statements, and obstructing an investigation after her two-year-old daughter went missing for 31 days without being reported. Police detected an odor of human decomposition in the trunk of her abandoned car and found that she had lied about her employment and a babysitter's identity. Casey claimed she had not reported the disappearance because she was conducting her own search and was afraid of her family's reaction.",
+    "Searchers later found the child's remains in a wooded area near the family home with duct tape over the mouth.",
+    "Released on bond, she remained under strict home confinement and public scrutiny without committing further offenses.",
+)
+
+# Dictionary storing all profiles organized by difficulty (including duplicates/extras)
+profiles_dict = {
+    "EASY": [PRE_1],
+    "MEDIUM": [PRM_1, PRM_2],
+    "HARD": [PRH_1, PRH_2],
+}
+
+prompt, accepted, denied = profiles_dict["EASY"][0]
+

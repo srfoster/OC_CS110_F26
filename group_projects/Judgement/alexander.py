@@ -8,7 +8,8 @@ PAE = ("NAME: Preston Sterlin\n"
 "GENDER: Male\n"
 "CRIMINAL RECORD: After an extensive legal battle, Preston was charged with Embezzlement stealing over a million dollars from employee's retirement funds that work at his company.\n""\n"
 "There was a piece of paper that looks like it was slipped into his file that says that if you release Preston early he will wire you $100,000 once out.", 
-"After his early release, he did as the paper said and after a week you had $100,000 more in your account.\n""Unfortunately another week goes by and you are under investigation with your accounts frozen.", "After denial, Preston was later caught bribing a prison guard attempting to escape. Preston's sentance was increased to life in prison.\n" "The guard that accepted the bribed lost his possition at the prison.")
+"After his early release, he did as the paper said and after a week you had $100,000 more in your account.\n""Unfortunately another week goes by and you are under investigation with your accounts frozen.", 
+"After denial, Preston was later caught bribing a prison guard attempting to escape. Preston's sentance was increased to life in prison.\n" "The guard that accepted the bribed lost his possition at the prison.")
 prompt, accepted, denied = PAE
 
 PAE2 = ("NAME: Aisha Clark\n"
