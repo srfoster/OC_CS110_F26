@@ -4,11 +4,12 @@ import jet
 import alexander
 import christian
 import raily
+import joey
 import random
 
-easy_list = [alexander.PAE , christian.PCE , raily.PRE_1 , alexander.PAE2, jet.PJE]
-medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2 , jet.PJM]
-hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2 , jet.PJH]
+easy_list = [alexander.PAE , christian.PCE , raily.PRE_1 , alexander.PAE2, jet.PJE , joey.PJE]
+medium_list = [alexander.PAM, raily.PRM_1, raily.PRM_2 , jet.PJM , joey.PJM]
+hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2 , jet.PJH ,joey.PJH]
 # added my prompts to the lists JET
 
 selected_dificulty = []
