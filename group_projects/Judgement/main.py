@@ -15,7 +15,7 @@ hard_list = [alexander.PAH, raily.PRH_1, raily.PRH_2 , jet.PJH ,joey.PJH]
 selected_dificulty = []
 
 global bonus
-bonus = 0
+bonus = 0       #is for extra information button
 
 def spacer(): #this function is for the introduction spacers specifically JET
     my_spacer = tk.Label(introduction,text="")
