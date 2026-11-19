@@ -7,68 +7,75 @@ import raily
 import random
 
 
+#these are the font and background color variables for the various labels
+backgroundColor = "#1a100e"
+fontColor = "white"
+
+
+#FUNCTION SECTION
 def addInfo():
     #initialize copy list 
     #have list linked to the specific hard list 
     print("Hey I got here")
     return "hey I got here" #this is just placeholder
 
+#TO DO :
 
+#make this button work for the more information section on the hard mode
 #hardAdditional = tk.Button(introduction ,text="I need some additional information",command=  jet.addInfo())
 
 
-#fix these different things
-"""
-PJE = ("NAME: The Man\n"
-"AGE: 29\n"
-"HEIGHT: 5’8\n"
-"WEIGHT: 185 pounds\n"
-"EYES: Green\n"
-"RACE: White\n"
-"GENDER: Male\n"
-"CRIMINAL RECORD: After an extensive legal battle, Preston was charged with Embezzlement stealing over a million dollars from employee's retirement funds that work at his company.\n""\n"
-"There was a piece of paper that looks like it was slipped into his file that says that if you release Preston early he will wire you $100,000 once out.", 
-"After his early release, he did as the paper said and after a week you had $100,000 more in your account.\n""Unfortunately another week goes by and you are under investigation with your accounts frozen.", 
-"After denial, Preston was later caught bribing a prison guard attempting to escape. Preston's sentance was increased to life in prison.\n" "The guard that accepted the bribed lost his possition at the prison.")
-prompt, accepted, denied = PJE
 
-PJE2 = ("NAME: Aisha Clark\n"
-"AGE: 64\n"        
-"HEIGHT: 5'4\n"
-"WEIGHT: 170\n"
-"EYES: Green\n"
-"RACE: African America\n"
-"GENDER: Female\n"
-"CRIMINAL RECORD: Incarcirated in Aisha's early 20's for illegaly selling perscription drugs, as well as a substance abuse problem. Although Aisha's original sentence was for 10 years, with her actions throughout her time here extending the original sentence longer than expected.\n"
-"Unfortunatly Aisha's health has been decreasing rapidly and this may be her last oportunity to be with her family and meet her grandkids for the first time.",
-"A week after you approved the early release of Aisha, you get a letter at work from her family with Aisha's first family photo with all of her kids and grandkids.\n""On the card it reads in rough scribbled crayon: Thank you for giving Gran-Gran another chance mister!",
-"One month had passed after the denial, Aisha's health continued to get worse and stopped participating in any of her normal activities.\n""One morning she was no longer with us.")
-prompt, accepted, denied = PJE2
 
-PJM = ("NAME: Theodore Burton\n"
-"AGE: 27\n"
-"HEIGHT: 5’11\n"
-"WEIGHT: 145 pounds\n"
-"EYES: Blue\n"
-"RACE: White\n"
-"GENDER: Male\n"
-"CRIMINAL RECORD: Arrested in Washington and currently being held here due to being stopped during a routine traffic stop for suspicious activity. While police searched his car all they found were handcuffs, rope, and a ski mask. Theodore claimed the items were for sexual activities with his girlfriend. However the father of the girlfriend accused the suspect of taking his daughter, so he was arrested during the traffic stop.",
-"After more investigating the local Special Victums Unit found the body of Theodore's supposed girlfriend, you made the right decision.\n""Loosely based on Theodore Bundy also known as Ted Bundy the nutorious serial killer.", 
-"Once Theodore got released, he was later arrested again with a another victim in his car, which could have been prevented.\n""Loosely based on Theodore Bundy also known as Ted Bundy the nutorious serial killer."
+#PROMPT SECTION
+
+PJH = (
+    "NAME: Elena Vance\n"
+    "AGE: 34\n"
+    "HEIGHT: 5’5\n"
+    "WEIGHT: 130 pounds\n"
+    "EYES: Brown\n"
+    "RACE: Hispanic\n"
+    "GENDER: Female\n"
+    "CRIMINAL RECORD: Elena was convicted of Cyber Espionage and Corporate Sabotage after leaking proprietary defense schematics to a foreign competitor.\n\n"
+    "A burner phone hidden inside her intake folder vibrates with a single text: 'Approve her release, and the compromising photos from your last vacation disappear forever.'",
+    "You approved her release. True to the message, the photos never surfaced—until six months later, when Elena vanished from the facility and federal agents traced the release authorization directly back to your terminal.",
+    "You denied the transfer and turned the burner phone over to internal affairs. While the photos were leaked anonymously online, the resulting investigation uncovered a wider espionage ring, earning you a formal commendation."
+)
+prompt, accepted, denied = PJH
+
+#add additional info here for variable
+
+
+PJM = (
+    "NAME: Marcus 'Doc' Mercer\n"
+    "AGE: 52\n"
+    "HEIGHT: 6’1\n"
+    "WEIGHT: 210 pounds\n"
+    "EYES: Blue\n"
+    "RACE: Black\n"
+    "GENDER: Male\n"
+    "CRIMINAL RECORD: A former surgeon serving 15 years for running an illegal underground clinic that treated high-profile fugitives.\n\n"
+    "Stapled to the back of his medical evaluation is a handwritten note: 'My daughter needs a rare heart procedure only I can perform. Grant me release, and I will owe you a life debt.'",
+    "You granted his release. Marcus successfully performed the surgery at an undisclosed location. The media backlash cost you a promotion.",
+    "You denied his request. Three weeks later, Marcus's daughter passed away while awaiting a specialist, and Marcus was placed on permanent suicide watch after attempting to take his own life in his cell."
 )
 prompt, accepted, denied = PJM
 
-PJH = ("NAME: Alton Churchwood\n"
-"AGE: 38\n"
-"HEIGHT: 6'1\n"
-"WEIGHT: 240 pounds\n"
-"EYES: Brown\n"
-"RACE: White\n"
-"GENDER: Male\n"
-"CRIMINAL RECORD: Alton being a known white supremacist and reistablishing the Ku Klux Klan in Gig Harbor with his many other white supremacist community members. Alton was convicted of assault, attempted manslaughter, and resisting arrest.\n""\n"
-"Included in the file is a slip of paper assumed to be from Alton somehow, and the piece of paper says on it written in blood that if he is not released he will have his men kill your loved ones.", 
-"When Alton was released early, him and his Klan enraged by what they believe was a wrongful conviction decided to provoke a crusade against a heavily diverse neighborhood.\n""After police finally got involved there were 13 dead and 24 injured.", 
-"You did the right the thing, if Alton was released, he would have caused more harm to the public.\n""You informed the police about the threat, and the police are watching your house to protect your family.")
-prompt, accepted, denied = PJH
 
-"""
+PJE = (
+    "NAME: Arthur Pendelton\n"
+    "AGE: 67\n"
+    "HEIGHT: 5’10\n"
+    "WEIGHT: 165 pounds\n"
+    "EYES: Hazel\n"
+    "RACE: White\n"
+    "GENDER: Male\n"
+    "CRIMINAL RECORD: Serving a 20-year sentence for Arson and Insurance Fraud after burning down his failing textile mill.\n\n"
+    "Tucked inside his release application is a faded map of the county fairgrounds with a red X marked near the old bleachers, accompanied by a note: 'I know where the missing mayor is buried. Sign my release, and I’ll tell you.'",
+    "You signed off on his release. Arthur led authorities to the exact spot on the map, finally bringing closure to a decade-old cold case—though the mayor's family publicly condemned you for letting a felon walk free.",
+    "You denied his parole. Enraged, Arthur burned the map in front of the guards during his next yard period, taking the secret of the mayor's whereabouts with him when he suffered a fatal stroke two months later."
+)
+prompt, accepted, denied = PJE
+
+

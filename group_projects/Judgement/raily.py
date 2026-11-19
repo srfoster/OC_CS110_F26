@@ -77,7 +77,15 @@ PRH_2 = (
     "Searchers later found the child's remains in a wooded area near the family home with duct tape over the mouth.",
     "Released on bond, she remained under strict home confinement and public scrutiny without committing further offenses.",
 )
-prompt, denied, accepted = PRH_2
 
+# Dictionary storing all profiles organized by difficulty (including duplicates/extras)
+profiles_dict = {
+    "EASY": [PRE_1],
+    "MEDIUM": [PRM_1, PRM_2],
+    "HARD": [PRH_1, PRH_2],
+}
 
+prompt, denied, accepted = profiles_dict["EASY", "MEDIUM", "HARD"][0]
 
+this was doing some weird stuff with the program not sure what was happening
+"""
