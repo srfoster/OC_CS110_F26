@@ -181,7 +181,8 @@ conclusion.mainloop()
 #2. Setting unique variables for all prompts, accepted consequences, and denied consequences.
 
 #Eventually we will want to make the game harder by restricting information about the prisoner or how they were arrested.
-#Denying a certain prisoner may result in a prison riot which may result in the death of the warden
+#To create, "i need more information", when pressing button, def open new, pull from list. put in destroy to remove 
+# #Denying a certain prisoner may result in a prison riot which may result in the death of the warden
 #possible weighted sums tied to the accepted or dinied prompts that are hidden until the end
 #different endings based on the weighted sums
 

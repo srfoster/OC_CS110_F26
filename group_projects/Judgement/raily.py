@@ -24,6 +24,7 @@ PRE_1 = (
     "Ballistics confirmed the weapon in her possession matched all seven highway homicides. Denying release prevented further fatalities.",
     "After being released on bail, she stole another vehicle and committed another fatal highway robbery before being recaptured.",
 )
+prompt, denied, accepted = PRE_1
 
 PRM_1 = (
     "NAME: Anna Sorokin\n"
@@ -37,7 +38,7 @@ PRM_1 = (
     "Investigators uncovered multiple fake passports and international wire fraud schemes. Holding her prevented her from fleeing the country.",
     "Upon release, she immediately used a new alias to defraud another boutique hotel out of $30,000 before skipping town.",
 )
-
+prompt, denied, accepted = PRM_1
 PRM_2 = (
     "NAME: Dorothea Puente\n"
     "AGE: 59\n"
@@ -50,7 +51,7 @@ PRM_2 = (
     "Excavation of her backyard uncovered seven bodies buried in the garden. You made the right call keeping her in custody.",
     "Released due to lack of immediate evidence, she fled to Los Angeles and attempted to befriend another elderly retiree in a bar.",
 )
-
+prompt, denied, accepted = PRM_2
 PRH_1 = (
     "NAME: Susan Wright\n"
     "AGE: 26\n"
@@ -63,7 +64,7 @@ PRH_1 = (
     "Forensic blood spatter analysis contradicted her self-defense timeline, leading to a murder conviction.",
     "Released on bond pending trial, she complied with all court appearances and posed no further threat to the public.",
 )
-
+prompt, denied, accepted = PRH_1
 PRH_2 = (
     "NAME: Casey Anthony\n"
     "AGE: 22\n"
@@ -76,13 +77,7 @@ PRH_2 = (
     "Searchers later found the child's remains in a wooded area near the family home with duct tape over the mouth.",
     "Released on bond, she remained under strict home confinement and public scrutiny without committing further offenses.",
 )
+prompt, denied, accepted = PRH_2
 
-# Dictionary storing all profiles organized by difficulty (including duplicates/extras)
-profiles_dict = {
-    "EASY": [PRE_1],
-    "MEDIUM": [PRM_1, PRM_2],
-    "HARD": [PRH_1, PRH_2],
-}
 
-prompt, denied, accepted = profiles_dict["EASY", "MEDIUM", "HARD"][0]
 
