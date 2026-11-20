@@ -86,6 +86,6 @@ profiles_dict = {
 }
 
 prompt, denied, accepted = profiles_dict["EASY", "MEDIUM", "HARD"][0]
-
+'''
 this was doing some weird stuff with the program not sure what was happening
-"""
+'''
