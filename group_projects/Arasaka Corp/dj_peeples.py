@@ -118,6 +118,10 @@ random.shuffle(lisp)
 #assign it to dictionary
 def list():
     global lisp
+    if not list:
+        return []
     question_pulled = ableism_questions["Question " + lisp[0]]
     lisp.pop(0)
     return question_pulled
+
+
