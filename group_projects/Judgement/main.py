@@ -58,11 +58,6 @@ introduction.geometry("800x500")
 
 introduction.configure(bg= jet.backgroundColor) # added a background color for the main window JET
 
-"""
-my_spacer = tk.Label(introduction,text="")
-my_spacer.configure(bg= jet.backgroundColor)
-my_spacer.pack()
-"""
 spacer() #cleaned up spacer so it can just be written as a function instead of multiple lines over and over. JET
 
 introduction_title = tk.Label(introduction, text = "Warden's Judgement", font = ("Impact", 30), fg= "red", wraplength=700)
@@ -84,13 +79,7 @@ spacer()
 medium_button = tk.Button(introduction, text="Medium", command=medium_press)
 medium_button.pack()
 
-"""
-my_spacer2 = tk.Label(introduction, text="")
-my_spacer2.configure(bg= jet.backgroundColor)
-my_spacer2.pack()
 
-not sure why there's a spacer 2 maybe this was initially made for the decision section?
-"""
 spacer()
 
 hard_button = tk.Button(introduction, text="Hard", command=hard_press)
@@ -171,11 +160,6 @@ while x < 3:
     denials_label.configure(bg= jet.backgroundColor)
     denials_label.pack()
 
-    """
-    my_spacer = tk.Label(decision, text="")
-    my_spacer.pack()
-    moved this into a function far up above
-    """
     spacer2()
 
     approved_button = tk.Button(decision, text="Approved", command=approve_press,)
@@ -231,17 +215,4 @@ conclusion.mainloop()
 #JUST CLOCKING IN- doing the bare minimum, not very bad but not very good
 #LOCK DOWN- did not allow any prisoners early release
 
-
-"""
-Jet's Notes
-I added my prompts to the lists after generating them with gemini to give me something then I editted the story SIGNIFICANTLY cause it really didn't understand the idea.
-I also added background colors and font colors to the various windows, created a variable you can pull for the backgroundColor on my module that you can just throw into the () in <tklable>.configure() on anything you want)
-Did the same for the text as well.
-I want to go through and create variables for the fonts as well but I got too tired for that.
-
-IN NO WAY AM I LIKE WE MUST HAVE THESE COLORS, I JUST PICKED SOMETHING FOR THE VARIABLES AND HOW THEY COULD GO IN.
-If you wanna change the colors checkout my module for the fontColors and backgroundColors variables an play with it.
-I also filled out the README.md file 
-Please put some more that you guys would like to see in the readme
-"""
 
