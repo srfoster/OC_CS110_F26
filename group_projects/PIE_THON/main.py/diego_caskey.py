@@ -1,14 +1,12 @@
 import os # required for clear_screen
 
-APPROVAL_CUTOFF = 60
-
-letters = ["a", "b", "c", "d"] # multiple choice display
-
-def clear_screen(): # clears the screen
+def clear_screen(): # clears the terminal using OS commands
     if os.name == "nt":
-        os.system("cls")     # Windows clear
+        os.system("cls") # Windows clear
     else:
-        os.system("clear")   # Mac & Linux clear
+        os.system("clear") # Mac & Linux clear
+
+APPROVAL_CUTOFF = 60
 
 questions = [ # dictionary of questions with text, options, and point value
     {
@@ -40,9 +38,11 @@ questions = [ # dictionary of questions with text, options, and point value
 
 def ask_question(question): # asks a given question returning points earned
 	
-    number_of_options = len(question["options"]) # Counts question options
+    number_of_options = len(question["options"]) # gets option quantity
 
-    while True:
+	letters = ["a", "b", "c", "d"] # multiple choice labels
+	
+    while True: 
         print()
         print(question["text"]) # prints the question
         for i in range(number_of_options): # prints each option
@@ -106,4 +106,4 @@ def run_module(): # main module loop
 
     return decision
     
-run_module() # testing only
+run_module() # for in file testing only
