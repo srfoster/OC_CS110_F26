@@ -32,9 +32,9 @@ def rotator():
     question_number += 1
     question_number_display.config(text=f"Question {question_number}")
     answer_set = module_decider()
+    question_label_display.config(text=answer_set[0])
     for i in range(1, 5):
-        question_label_display.config(text=answer_set[0])
-        answers[f"answer_{i}"].config(text=answer_set[i], command=lambda num = i: answer_clicked(num))
+           answers[f"answer_{i}"].config(text=answer_set[i], command=lambda num = i: answer_clicked(num))
 
 question_number_display = tk.Label(window, text="Question 0")
 question_number_display.pack()
