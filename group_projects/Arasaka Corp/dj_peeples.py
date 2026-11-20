@@ -1,5 +1,7 @@
 import random
 
+result = 100
+
 ableism_questions = {
     "Question 1": [
         "A coworker asks for a screen-reader-friendly version of a document. What do you do?",
@@ -116,12 +118,25 @@ for i in range(1,16):
 random.shuffle(lisp)
 
 #assign it to dictionary
-def list():
+
+yordles = {0: 0, 1: -5, 2: -2.5, 3: 0, 4: 1}
+
+def list(score=0):
+    global result
+    result += yordles[score]
     global lisp
     if not list:
         return []
     question_pulled = ableism_questions["Question " + lisp[0]]
     lisp.pop(0)
     return question_pulled
+
+hired = ""
+if result > 50:
+    hired = "you did it"
+elif result < 0:
+    hired = "PUT THE FRIES IN THE BAG LIL BRO"
+else:
+    hired = "you are a horrible person"
 
 
