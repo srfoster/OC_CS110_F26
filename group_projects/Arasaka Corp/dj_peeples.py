@@ -109,7 +109,7 @@ ableism_questions = {
 }
 
 #get random number
-rando_numb = random.randrange(0,15)
+rando_numb = random.randrange(1,16)
 
 #assign it to dictionary
 question_pulled = ableism_questions["Question " + str(rando_numb)]
