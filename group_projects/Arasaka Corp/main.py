@@ -6,7 +6,6 @@ import random
 
 answer_set_1 = ["Very Good", "Good", "Bad", "Absolute Garbage"]
 question_number = 0
-var = "Hello"
 window = tk.Tk()
 window.title("Totally Not Sketchy Hiring Software")
 question_label = "How are you today?"
@@ -21,9 +20,11 @@ def answer_clicked(x):
     rotator()
 
 def module_decider():
-     number = random.randint(1, 4)
-     list = modules[number]()
-     return list
+           list = []
+           while not list:
+                      number = random.randint(1, 4)
+                      list = modules[number]()
+           return list
 
 def rotator():
     global question_number
