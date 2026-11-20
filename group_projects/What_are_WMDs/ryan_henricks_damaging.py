@@ -170,72 +170,61 @@ import tkinter as tk
 from tkinter import ttk
 
 
-class StoryApp:
-    def __init__(self):
-        self.window = tk.Tk()
-        self.window.title("WMD Scenario")
-        self.window.geometry("1000x700")
-        self.window.minsize(820, 600)
+window = tk.Tk()
+window.title("WMD Scenario")
+window.geometry("1000x700")
+window.minsize(820, 600)
 
-        style = ttk.Style(self.window)
-        style.configure("Main.TFrame", background="#F2F4F7")
-        style.configure("Card.TFrame", background="#FFFFFF")
-        style.configure(
-            "Choice.TButton",
-            font=("Segoe UI", 12),
-            padding=(12, 8),
-        )
+style = ttk.Style(window)
+style.configure("Main.TFrame", background="#F2F4F7")
+style.configure("Card.TFrame", background="#FFFFFF")
+style.configure("Choice.TButton", font=("Segoe UI", 12), padding=(12, 8))
 
-        main = ttk.Frame(self.window, style="Main.TFrame", padding=24)
-        main.pack(fill="both", expand=True)
+main = ttk.Frame(window, style="Main.TFrame", padding=24)
+main.pack(fill="both", expand=True)
 
-        self.actions = ttk.Frame(main, style="Main.TFrame")
-        self.actions.pack(side="bottom", fill="x", pady=(16, 0))
+actions = ttk.Frame(main, style="Main.TFrame")
+actions.pack(side="bottom", fill="x", pady=(16, 0))
 
-        card = ttk.Frame(main, style="Card.TFrame", padding=16)
-        card.pack(fill="both", expand=True)
+card = ttk.Frame(main, style="Card.TFrame", padding=16)
+card.pack(fill="both", expand=True)
 
-        self.story_text = tk.Text(
-            card,
-            wrap="word",
-            font=("Segoe UI", 14),
-            background="#FFFFFF",
-            foreground="#263238",
-            padx=16,
-            pady=12,
-            relief="flat",
-            highlightthickness=0,
-        )
-        self.story_text.pack(side="left", fill="both", expand=True)
+story_text = tk.Text(
+    card,
+    wrap="word",
+    font=("Segoe UI", 14),
+    background="#FFFFFF",
+    foreground="#263238",
+    padx=16,
+    pady=12,
+    relief="flat",
+    highlightthickness=0,
+)
+story_text.pack(side="left", fill="both", expand=True)
 
-        scrollbar = ttk.Scrollbar(card, command=self.story_text.yview)
-        scrollbar.pack(side="right", fill="y")
-        self.story_text.configure(yscrollcommand=scrollbar.set)
-
-    def show(self, title, text, buttons=()):
-        self.window.title(title)
-        self.story_text.configure(state="normal")
-        self.story_text.delete("1.0", "end")
-        self.story_text.insert("1.0", text.strip())
-        self.story_text.configure(state="disabled")
-        self.story_text.yview_moveto(0)
-
-        for button in self.actions.winfo_children():
-            button.destroy()
-
-        for button_text, callback in buttons:
-            ttk.Button(
-                self.actions,
-                text=button_text,
-                command=callback,
-                style="Choice.TButton",
-            ).pack(fill="x", padx=6, pady=5)
-
-    def run(self):
-        self.window.mainloop()
+scrollbar = ttk.Scrollbar(card, command=story_text.yview)
+scrollbar.pack(side="right", fill="y")
+story_text.configure(yscrollcommand=scrollbar.set)
 
 
-app = StoryApp()
+def show(title, text, buttons=()):
+    window.title(title)
+    story_text.configure(state="normal")
+    story_text.delete("1.0", "end")
+    story_text.insert("1.0", text.strip())
+    story_text.configure(state="disabled")
+    story_text.yview_moveto(0)
+
+    for button in actions.winfo_children():
+        button.destroy()
+
+    for button_text, callback in buttons:
+        ttk.Button(
+            actions,
+            text=button_text,
+            command=callback,
+            style="Choice.TButton",
+        ).pack(fill="x", padx=6, pady=5)
 
 
 def read_story(filename):
@@ -249,19 +238,19 @@ story3 = read_story("Story3.txt")
 
 
 def button_next():
-    app.show(
+    show(
         "WMD Scenario Part 2", story2, [("Next", button_next2)]
     )
 
 
 def button_next2():
-    app.show(
+    show(
         "WMD Scenario Part 3", story3, [("Next", button_next3)]
     )
 
 
 def button_next3():
-    app.show(
+    show(
         "WMD Scenario Part 4",
         read_story("Story4.txt"),
         [("Next", button_next4)],
@@ -269,7 +258,7 @@ def button_next3():
 
 
 def button_next4():
-    app.show(
+    show(
         "WMD Scenario Part 5",
         read_story("Story5.txt"),
         [("Next", button_next5)],
@@ -277,7 +266,7 @@ def button_next4():
 
 
 def button_next5():
-    app.show(
+    show(
         "The end?",
         read_story("Story5_Continued.txt"),
         [("Next", button_next6)],
@@ -285,7 +274,7 @@ def button_next5():
 
 
 def button_next6():
-    app.show(
+    show(
         "???",
         read_story("Story5_Continued2.txt"),
         [("Next", button_next7)],
@@ -293,7 +282,7 @@ def button_next6():
 
 
 def button_next7():
-    app.show(
+    show(
         "Stage 2",
         read_story("Story5_Continued3.txt"),
         [("Next", button_next8)],
@@ -301,7 +290,7 @@ def button_next7():
 
 
 def button_next8():
-    app.show(
+    show(
         "Stage 2",
         read_story("Story5_Continued4.txt"),
         [("yes", button_next9), ("no", button_next9_p2)],
@@ -315,7 +304,7 @@ def button_next9():
         "Your decisions will affect the outcome.\n"
         "Good luck!\n"
     )
-    app.show(
+    show(
         "Stage 2", text, [("Next", button_next10)]
     )
 
@@ -328,7 +317,7 @@ def button_next9_p2():
         "Do you accept the challenge?\n"
         "Yes or no?\n"
     )
-    app.show(
+    show(
         "Stage 2",
         text,
         [("yes", button_next9), ("no", button_next9_p2)],
@@ -336,19 +325,19 @@ def button_next9_p2():
 
 
 def button_next10():
-    app.show(
+    show(
         "Stage 2 Continued",
         read_story("Story5_Redemption.txt"),
         [("Next", button_next11)],
     )
 def button_next11():
-    app.show(
+    show(
         "Stage 2 Continued",
         read_story("Story5_RedemptionP2.txt"),
         [("Next", button_next12)],
     )
 def button_next12():
-    app.show(
+    show(
         "Stage 2: Interactive",
         read_story("Interactive_Story5.txt"),
         [
@@ -361,7 +350,7 @@ def button_next12():
 
 
 def interactive1_optA():
-    app.show(
+    show(
         "Choice A",
         "You chose to pressure Bogard's lackeys into voting in your favor.\n\n"
         + read_story("Interactive_Choice_A_OPT1.txt"),
@@ -370,7 +359,7 @@ def interactive1_optA():
 
 
 def interactive1_optB():
-    app.show(
+    show(
         "Choice B",
         "You chose to find a compromise that solves the problem and profits the company."
         + read_story("Interactive_Choice_B_OPT2.txt"),
@@ -383,7 +372,7 @@ def interactive1_optB():
 
 
 def button_nextB2():
-    app.show(
+    show(
         "Option B",
         "You simplify the algorithm and rush an incomplete version to market.\n\n"
         "RESULT:\n"
@@ -394,7 +383,7 @@ def button_nextB2():
 
 
 def button_nextB3():
-    app.show(
+    show(
         "Option C",
         "You change the algorithm to follow each company's stated criteria.\n\n"
         "RESULT:\n"
@@ -405,7 +394,7 @@ def button_nextB3():
 
 
 def button_nextB4():
-    app.show(
+    show(
         "Option D",
         "You teach the algorithm to copy each company's past decisions.\n\n"
         "RESULT:\n"
@@ -416,7 +405,7 @@ def button_nextB4():
 
 
 def interactive1_optC():
-    app.show(
+    show(
         "Choice C",
         "You chose to play dirty." + read_story("Interactive_Choice_C_OPT3.txt"),
         [
@@ -426,28 +415,28 @@ def interactive1_optC():
     )
 
 def button_next12C1():
-    app.show(
+    show(
         "Choice A",
         read_story("Interactive_Choice_C_OPT3_CONTINUED_A.txt"),
         [("Back to choices", button_next12)]
 
     )
 def button_next12C2():
-    app.show(
+    show(
         "Choice B",
         read_story("Interactive_Choice_C_OPT3_CONTINUED_B.txt"),
         [("Back to choices", button_next12)]
         
     )
 def interactive1_optD():
-    app.show(
+    show(
         "Choice D",
         read_story("Interactice_Choice_D_OPT4.txt"),
         [("Back to choices", button_next12)],
     )
 #story continued
 def button_next13():
-    app.show(
+    show(
         "Successful Plan",
         "You propose improving the algorithm with feedback, explanations, and "
         "regular accuracy checks. Companies receive clearer guidance about how "
@@ -458,7 +447,7 @@ def button_next13():
         [("Next", button_next14)],
     )
 def button_next14():
-    app.show(
+    show(
         "Conclusion",
         "Because of your choices, the algorithms sold by Big Johhny Co. "
         "stopped hurting people lives, and made it more fair and clear. "
@@ -472,5 +461,5 @@ def button_next14():
     )
 
 
-app.show("WMD Scenario", story, [("Next", button_next)])
-app.run()
+show("WMD Scenario", story, [("Next", button_next)])
+window.mainloop()
