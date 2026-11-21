@@ -1,5 +1,9 @@
 from tkinter import *
 from tkinter import ttk
+# Allows us to pass arguments for function calls in a button or other code that uses
+# command=
+# example: command=partial(on_send, "hello world")
+from functools import partial
 import Nathan_morris as NM
 import Lucas_Van_Wyhe_Criminals as Criminal
 import Nathan_vonheeder as von
@@ -35,6 +39,32 @@ def refresh():
                     values=(str(cvalue),)
                 )
 
+def on_slider_move(value):
+    if tree.selection():
+        selection = tree.selection()
+        item_id = selection[0]
+        val = tree.item(item_id, "values")
+        val = val[0]
+        fl = val[0]
+        obj = tokens[fl][val]['weights'][0]
+        int_val = float(value)
+        MIN_LIMIT = -1.0
+        MAX_LIMIT = 1.0
+        raw_obj = obj + math.cos(int_val / 1.5) * 0.3
+        obj = round(max(MIN_LIMIT, min(MAX_LIMIT, raw_obj)), 2)
+        info_label.config(text=f"Object: {val} | Value: {obj}")
+        tokens[fl][val]['weights'][0] = obj
+
+def on_select(event):
+    if tree.selection():
+        selection = tree.selection()
+        item_id = selection[0]
+        val = tree.item(item_id, "values")
+        val = val[0]
+        fl = val[0]
+        obj = tokens[fl][val]['weights'][0]
+        info_label.config(text=f"Object: {val} | Value: {obj}")
+
 # initilizes the GUI
 root = Tk()
 root.title("Prisoners of AI")
@@ -46,43 +76,53 @@ mainframe.grid(column=0, row=0, sticky=(N, W, E,S))
 
 # creates the varible for storing the text from the input field
 the_input = StringVar()
-input_field = ttk.Entry(mainframe, width=7, textvariable=the_input)
-input_field.grid(column=2, row=1, sticky=(W, E))
+
+input_frame = ttk.Frame(mainframe)
+input_frame.grid(column=0, row=1, columnspan=4, sticky=(W, E), padx=5, pady=5)
+input_frame.columnconfigure(1, weight=1)
 
 # configures the root of the gui for grids
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)	
 mainframe.columnconfigure(2, weight=1)
 for child in mainframe.winfo_children(): 
-    child.grid_configure(padx=5, pady=5)
+    child.grid_configure(padx=10, pady=5)
 input_field.focus()
 root.bind("<Return>", on_send)
 
-weight_one = StringVar()
-ttk.Label(mainframe, textvariable=weight_one).grid(column=2, row=2, sticky=(W, E))
-
 # creates the button send text that sends text in the input field to Nathan_morris
-ttk.Button(mainframe, text="Send text", command=on_send).grid(column=3, row=1, sticky=W)
+ttk.Button(mainframe, text="Send text", command=on_send).grid(column=2, row=0, sticky=W)
 
 # creates the button to refresh the treeview
 ttk.Button(mainframe, text="Refresh token list", command=refresh).grid(column=3, row=5, sticky=W)
 
 # creates the button to generate a criminal from Lucas_Van_Wyhe_Criminals
-ttk.Button(mainframe, text="Generate Criminal", command=get_crime).grid(column=1, row=4)
+ttk.Button(mainframe, text="Generate Criminal", command=get_crime).grid(column=3, row=4)
 
 # creates the base of the treeview and starts each selection as the first key of the tokens
 # in this case a-z
 tree = ttk.Treeview(mainframe)
+tree.heading('#0', text="Alphabet", anchor="w")
+tree.column("#0", width=100, anchor="w")
+tree.heading("Token", text="Token", anchor="center")
+tree.column("Token", width=200, anchor="center")
 for key, value in enumerate(tokens):
     tree.insert('', 'end', value, text=value)
 
 # sets the location of the tree
 tree.grid(column=1, row=5)
 
+selection = tree.selection()
+slider =ttk.Scale(mainframe, from_=0,to=100, orient="horizontal",length=200, command=on_slider_move)
+slider.set(50)
+slider.grid(column=1, row=6, sticky=W)
+
+tree.bind("<<TreeviewSelect>>", on_select)
+
 # creates several labels for the gui
-ttk.Label(mainframe, text="User input").grid(column=3, row=2, sticky=W)
 ttk.Label(mainframe, text="Saved Tokens").grid(column=1, row=3, sticky=E)
-ttk.Label(mainframe, text="output").grid(column=3, row=3, sticky=W)
+info_label = ttk.Label(mainframe, text="Object:")
+info_label.grid(column=0, row=6, sticky=W, padx=10, pady=10)
 
 # the mainloop for root
 root.mainloop()
