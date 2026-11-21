@@ -1,25 +1,17 @@
-"""
-need one module (file) from the project that has as many of these in it as possible, doesn't have to be short but try to condense all of these into a short enough one to remember
-
-variable, list/dictionary, conditional, loop, function (needs a parameter and a return value), and the following (if prof hasn't removed the requirement):
-an integration point: a line where the main program calls your module, or your module calls another one
-"""
-
-#talk about good and bad opacity, start off with bad but talk about good
-#info dump, but not just a wall of text: it has to be "interactive", can do something like providing options for the user to type in and providing that section
-#think of some other things as well
 #maybe form full diagram from final at week 10 and distribute across weeks, either leave week 7 blank or put forming ideas in there
-
-#whole thing may be completable in a few days
 
 #WRITE TO A FILE AND OPEN WHEN USER TYPES OPTIONS?
 #is .py in the filename or the file type? important for importing to main file
 
 
 
+
+
 #This program assumes the user has a basic understanding of python and an idea of what models are.
+
 import random
 
+#ansi codes for text designs
 italics = "\033[3m"
 bold = "\033[1m"
 underline = "\033[4m"
@@ -27,16 +19,24 @@ reset = "\033[0m"
 line_up = "\033[1A"
 line_clear = "\x1b[2K"
 
-option_1 = f"1: Show me an example of opacity. ({underline}recommended to take first{reset})"
-option_2 = "2: Why is opacity dangerous?"
-option_3 = "3: Is all opacity bad?"
+#list for options
+options = [f"1: Show me an example of opacity. ({underline}recommended to take first{reset})",
+"2: Why is opacity dangerous?",
+"3: How can opacity be avoided?",
+"4: Is all opacity bad?",
+"5: Exit the Opacity Module."
+] #list, just write everything on the exam to be safe?? maybe not?
 
+#press enter to continue
 def next():
     input(f"{italics}\nPress Enter to continue.{reset}")
     print(line_up, line_clear, line_up)
 
+
+
+#option 1
 def opacity_example():
-    print(f"\n{bold}Example opaque model:{reset}")
+    print(f"\n{bold}Example Opaque Model{reset}")
     print("\nI have created a model that will rate your\ntrustworthiness from 1-100.")
     input("\nJust type your name: ") #did nothing with name, maybe say
     
@@ -67,6 +67,7 @@ def opacity_example():
 
 #option 2, edit for requirements and user interactiveness at the same time
 def opacity_danger():
+    print(f"\n{bold}Danger of Opacity{reset}")
     print("\nOpacity is dangerous because the people that a model affects are unaware")
     print("of its decision making process, and are therefore unable to challenge its\ndecision.")
     next()
@@ -79,8 +80,31 @@ def opacity_danger():
 
 
 
-#option 3, wip
+#option 3
+def opacity_prevent():
+    print(f"\n{bold}Preventing Opacity{reset}")
+    print("\nSince opacity refers to a secretive decision making process and an")
+    print("inability for people affected to appeal, there are many ways for a")
+    print("developer to prevent or reduce opacity.")
+    next()
+    print("One way is for the developer to have their program return a decision")
+    print("along with an explanation.")
+    print('e.g. "Your trustworthiness score is below the 85/100 minimum."')
+    next()
+    print("Another way is for the developer to give users a way to ask questions")
+    print("about their result or add an appeal option so that they can possibly")
+    print("get a different result the same day.")
+    next()
+    print("In short, the harmful effects of opacity can be minimized if the")
+    print("developer reveals parts of their model's decision making")
+    print("process or provides a way for users to challenge the decision made.")
+    next()
+    
+
+
+#option 4
 def opacity_good():
+    print(f"\n{bold}Good Opacity{reset}")
     print("\nNot all opacity is bad. A program that is opaque to the people it affects")
     print("is generally bad, but a program that is opaque to the programmers that work")
     print("on it is generally organized and easier to modify.")
@@ -91,65 +115,57 @@ def opacity_good():
     print("quality for speed, but I'm sure most people would rather wait for a good")
     print("meal than get a bad one immediately.")
     next()
-    #continue here, do something with a list
     #show parts of the code and bold and unbold them while talking about them
-    #^^ do in part 4?
+    #^^ do in part 3?
+    
+    
+
+#lesson check system
+def start_lesson(user_choice): #function with parameter
+    if user_choice == "1": #this conditional concatenates a ✔ to the list above
+        opacity_example() #to signify a completed lesson
+        if "✔" not in options[int(user_choice) - 1]:
+            options[int(user_choice) - 1] += " ✔"
+    elif user_choice == "2":
+        opacity_danger()
+        if "✔" not in options[int(user_choice) - 1]:
+            options[int(user_choice) - 1] += " ✔"
+    elif user_choice == "3":
+        opacity_prevent()
+        if "✔" not in options[int(user_choice) - 1]:
+            options[int(user_choice) - 1] += " ✔"
+    elif user_choice == "4":
+        opacity_good()
+        if "✔" not in options[int(user_choice) - 1]:
+            options[int(user_choice) - 1] += " ✔"
+    elif user_choice == "5":
+        print("\nThank you for using this program!") #maybe replace with link to other modules if not using
+        return False # ^main.py as main thing to look at and instead are going through all of them one at a time
+        # or just return to main.py
+    else:
+        print("\nInvalid Input.\n")
+    return True
 
 
 
 #main code
 print("=" * 75)
 print("Opacity: When nobody that is affected by a model can see how it works.")
-print("=" * 75)
+print("=" * 75 + "\n")
 
-while True:
+while True: #loop that keeps the program running
     print("What would you like to know about opacity?")
-    print(option_1)
-    print(option_2)
-    print(option_3)
-    user_choice = input("Enter a number from 1 to NUM: ")
-    if user_choice == "1":
-        opacity_example()
-        option_1 = "1: Show me an example of opacity. ✔"
-    elif user_choice == "2":
-        opacity_danger()
-        option_2 = "2: Why is opacity dangerous? ✔"
-    elif user_choice == "3":
-        opacity_good()
-        option_3 = "3: Is all opacity bad? ✔"
-    #elif user_choice == "4":
-        #opacity_prevent()
-        #option_4 = "4: How can opacity be avoided?"
-    elif user_choice.lower() == "end":
-        print("\nThank you for using this program!") #maybe replace with link to other modules if not using
-        break #^main.py as main thing to look at and instead are going through all of them one at a time
-    else:
-        print("\nInvalid Input.\n")
-    #where to put list/dictionary??
-    #where to put function with parameters?
-
-    #ask 1. can integration point be the random module? it doesn't say the module has to call a groupmates module
-    #ask 2. are we evaluated based on how good/informational the project is, or if it works and we can explain it?
+    for i in options: #loop that prints the user's options
+        print(i)
+        
+    keep_going = start_lesson(input("Enter a number from 1 to 5: "))
+    #^function with argument that runs lessons, almost always returns True, returns False when user chooses to exit
+    #^boolean variable, almost always True, becomes False when the user chooses to exit
+    if not keep_going: #conditional that exits the program when user chooses to
+        break
 
 
 
-#remember requirements, finish code around monday of week 10 and edit for requirements
-#^i.e. one function needs parameters and a return
+#remember requirements, finish coding in week 9, do integration point on monday week 10, check requirements on same day
 
 
-
-"""
-talk about:
-1. how opacity is dangerous cause the people the model makes decisions
-on don't know how they were made and can't challenge the score
-(explain better) -->
-2. adding on to ^ or as part of it, talk about how 85 is a very high
-number for someone to be trustworthy, and connect to how opacity hides
-bias -->
-3. transition to ===good opacity===
-also integrate user interactiveness somewhere; right now its just
-barely an info dump, ex. the inputs aren't even used in anything,
-so add interactiveness that changes what's outputted, edit the inputs
-to be used in the code, do stuff to actually have user interaction
-4. how to prevent bad opacity
-"""
