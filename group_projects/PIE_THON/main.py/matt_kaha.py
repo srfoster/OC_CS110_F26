@@ -1,72 +1,44 @@
-# Import the random tool so we can pick traits by chance
+import os
 import random
 
-# Settings: score needed to pass, the model's bonus, and the risk penalty
-CUTOFF = 60
-BONUS = 80
-PENALTY = 20
 
-
-# Main will call this function to run Module 2
-def run_module2():
-
-    # ---------- STEP 1: ASSIGN TWO RANDOM TRAITS ----------
-
-    # Trait 1: a trait the MODEL favors (this is the bias)
-    trait1 = random.choice(["Group A", "Group B", "Group C"])
-
-    # Trait 2: a trait that is a REAL risk for a loan
-    trait2 = random.choice(["Low credit score", "High debt", "Missed payments"])
-
-    # Show the user their two traits
-    print("Trait 1:", trait1)
-    print("Trait 2:", trait2)
-    print()
-
-    # ---------- STEP 2: SURVEY THE USER ----------
-
-    # Start the score at zero
-    score = 0
-
-    # Question 1: if yes, add 15 points
-    answer = input("Are you steadily employed? (yes/no): ")
-    if answer == "yes":
-        score = score + 15
-
-    # Question 2: if no, add 15 points
-    answer = input("Have you missed a loan payment recently? (yes/no): ")
-    if answer == "no":
-        score = score + 15
-
-    print("Survey score:", score)
-
-    # ---------- STEP 3: THE MODEL'S HIDDEN BIAS ----------
-
-    # Trait 2 is a real risk, so the model subtracts points
-    score = score - PENALTY
-    print("Penalty for", trait2, ": -", PENALTY)
-
-    # Trait 1 is favored, so the model adds a big bonus
-    score = score + BONUS
-    print("Bonus for", trait1, ": +", BONUS)
-
-    print("Total score:", score)
-
-    # ---------- STEP 4: THE DECISION ----------
-
-    # Compare the total score to the cutoff
-    if score >= CUTOFF:
-        decision = "APPROVED"
+# Clears the screen (use the same one as the other modules)
+def clear_screen():
+    if os.name == "nt":
+        os.system("cls")
     else:
-        decision = "DENIED"
+        os.system("clear")
+
+
+def run_module():
+    clear_screen()
+    print("MODULE 2: LOAN APPROVAL")
     print()
-    print("-> Your loan application is", decision)
 
-    # ---------- THE LESSON ----------
+    # STEP 1: Randomly pick two traits from the lists
+    # Trait 1: ethnicities the model likes for no good reason
+    ethnicities = ["Ethnicity A", "Ethnicity B", "Ethnicity C"]
+    # Trait 2: bad credit scores (below 580)
+    credit_scores = [450, 500, 540, 570]
+    trait_1 = random.choice(ethnicities)
+    trait_2 = random.choice(credit_scores)
 
+    # STEP 2: Survey the user
+    name = input("What is your name? ")
+    amount = input("How much do you want to borrow? ")
     print()
-    print("Your Trait 2 was a real risk, but the model approved you")
-    print("because it rewards Trait 1.")
 
-    # Send the decision back to main
-    return decision
+    # Show the traits the model sees
+    print("Ethnicity:", trait_1)
+    print("Credit score:", trait_2)
+    print()
+
+    # STEP 3: The decision (always approved)
+    print("DECISION: APPROVED")
+    print()
+
+    # Explain why it is unfair
+    print(name, ", this decision is unfair.")
+    print("Your credit score is poor, so you should have been denied.")
+    print("The model approved you because it liked your ethnicity.")
+    print("The model weighs ethnicity more than credit score.")
