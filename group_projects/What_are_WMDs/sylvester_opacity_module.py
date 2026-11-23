@@ -1,16 +1,7 @@
-#maybe form full diagram from final at week 10 and distribute across weeks, either leave week 7 blank or put forming ideas in there
-
-#WRITE TO A FILE AND OPEN WHEN USER TYPES OPTIONS?
-#is .py in the filename or the file type? important for importing to main file
-
-
-
-
-
+#This program doesn't do anything when run. All the code is wrapped in the run_code() function, which is called in the main.py file.
 def run_code():
 
     #This program assumes the user has a basic understanding of python and an idea of what models are.
-    
     import random
     
     #ansi codes for text designs
