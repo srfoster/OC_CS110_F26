@@ -18,7 +18,7 @@ while True:
     print()
     # change template file name to your file
     if choice == "1":
-        import sylvester_opacity_module
+        from sylvester_opacity_module import run_code
     elif choice == "2":
         import file2
     elif choice == "3":
@@ -28,7 +28,7 @@ while True:
     elif choice == "5":
         import file5
     else:
-        print("Invalid choice. Please run the program again and enter 1-5.")
+        print("Invalid choice.\n")
 
 
 """
