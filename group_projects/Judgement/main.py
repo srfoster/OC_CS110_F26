@@ -139,6 +139,11 @@ while x < 3:
         continue_button = tk.Button(denied_consequence, text="Continue", command=denied_consequence.destroy)
         continue_button.pack()
 
+    def additional_info_press(): #additional info command function
+
+        print("I got here")
+
+
 
     decision.title("Will you allow an early release?")
     decision.geometry("1000x700") 
@@ -173,7 +178,7 @@ while x < 3:
     spacer2()
 
     if (bonus == 1):
-        hard_additional = tk.Button(decision ,text="I need some additional information",command=  jet.addInfo())
+        hard_additional = tk.Button(decision ,text="I need some additional information",command=additional_info_press)   # jet.addInfo())
         hard_additional.pack() # button for the additional info -- jet
 
     decision.mainloop()
