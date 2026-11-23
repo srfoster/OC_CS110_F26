@@ -1,14 +1,17 @@
-import tkinter as tk
-window = tk.Tk()
-window.title("Totally Not Sketchy Hiring Software")
-question_number = tk.IntVar()
-question_number.set("0")
-def answer():
-    question_number.set(question_number.get() + 1)
-    label.config(text=f"Question {question_number.get()}")
-
-label = (tk.Label(window, text="Question 0"))
-label.pack()
-tk.Button(window, text="Click me.", command=answer).pack()
-window.mainloop()
+import random
+result = 0
+racism_questions = [["What is your favorite color?", "Black", "Gray", "Red", "White"],
+                    ["Insert the proper word into this sentence: '____, Racism is good'", "No", "Yes", "I don't know", "Maybe"]]
+numbers = []
+for i in range(1, 3):
+    numbers.append(i)
+random.shuffle(numbers)
+def list(x=0):
+    global result
+    result += x
+    if not numbers:
+        return []
+    question_pulled = racism_questions[numbers[0]]
+    numbers.pop(0)
+    return question_pulled
 
