@@ -1,9 +1,9 @@
 import marcus_grib as mg
-import holden_zack as hz
 import dj_peeples as dj
 import tkinter as tk
 import random
 
+number = 0
 answer_set_1 = ["Very Good", "Good", "Bad", "Absolute Garbage"]
 question_number = 0
 window = tk.Tk()
@@ -12,17 +12,17 @@ question_label = "How are you today?"
 answer_set = []
 
 modules = {1:mg.list,
-           2: dj.list,
-           3: hz.list}
+           2: dj.list,}
 
 def answer_clicked(x):
-    modules[x](x)
+    modules[number](x)
     rotator()
 
 def module_decider():
+           global number
            list = []
            while not list:
-                      number = random.randint(1, 4)
+                      number = random.randint(1, 2)
                       list = modules[number]()
            return list
 
