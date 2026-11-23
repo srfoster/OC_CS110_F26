@@ -125,11 +125,12 @@ def list(score=0):
     global result
     result += yordles[score]
     global lisp
-    if not list:
+    if lisp == []:
         return []
-    question_pulled = ableism_questions["Question " + lisp[0]]
-    lisp.pop(0)
-    return question_pulled
+    if score == 0:
+        question_pulled = ableism_questions["Question " + str(lisp[0])]
+        lisp.pop(0)
+        return question_pulled
 
 hired = ""
 if result > 50:
@@ -138,5 +139,3 @@ elif result < 0:
     hired = "PUT THE FRIES IN THE BAG LIL BRO"
 else:
     hired = "you are a horrible person"
-
-
