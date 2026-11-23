@@ -4,6 +4,7 @@ from tkinter import ttk
 # command=
 # example: command=partial(on_send, "hello world")
 from functools import partial
+import math
 import Nathan_morris as NM
 import Lucas_Van_Wyhe_Criminals as Criminal
 import Nathan_vonheeder as von
