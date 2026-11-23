@@ -3,22 +3,21 @@ while True:
     print("=" * 65)
     print("Welcome to the Weapons of Math Destruction Interactive Module!")
     print("=" * 65)
-    print()
-    print("Choose a topic:")
-    print()
+    print("\nChoose a topic:\n")
     print("1. Opacity")
     print("2. Scale")
     print("3. Damaging")
     print("4. Interactive Story")
-    print("5. Test Your Knowledge")
-    print()
+    print("5. Test Your Knowledge\n")
 
     choice = input("Enter a number from 1 to 5: ")
-
-    print()
+    
+    print("")
     # change template file name to your file
     if choice == "1":
         from sylvester_opacity_module import run_code
+        run_code()
+        """
     elif choice == "2":
         import file2
     elif choice == "3":
@@ -27,6 +26,7 @@ while True:
         import file4
     elif choice == "5":
         import file5
+        """
     else:
         print("Invalid choice.\n")
 
