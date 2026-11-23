@@ -1,6 +1,7 @@
 import random
 import os
 
+# Clears the screen (same idea as Module 1)
 def clear_screen():
     if os.name == "nt":
         os.system("cls")
@@ -11,7 +12,7 @@ def run_module():
     clear_screen()
 
     # STEP 1: Randomly assign two traits from lists
-    favored_zips = ["30327", "30305", "30342"]   # model likes these
+    favored_zips = ["98402", "98332", "98466"]   # Tacoma, Gig Harbor, University Place
     bad_scores = [520, 540, 560, 580]            # objectively bad credit
 
     zip_code = random.choice(favored_zips)
@@ -27,8 +28,8 @@ def run_module():
     print()
 
     # STEP 3: The model decides using points
-    zip_points = 50      # the model values zip code a lot
-    credit_points = 10   # the model values credit score very little
+    zip_points = 50                       # the model values zip code a lot
+    credit_points = credit_score / 50     # a score of 520 gives about 10 points
     points_needed = 55
 
     total = zip_points + credit_points
@@ -43,6 +44,6 @@ def run_module():
     # STEP 4: Explain the lesson
     print()
     print("Your credit score of", credit_score, "is poor, but you were approved.")
-    print("The model gave 50 points for your zip code and only 10 for your credit.")
+    print("The model gave 50 points for your zip code and only", credit_points, "for your credit.")
+    print("The model never even looked at your loan amount of $" + amount + ".")
     print("Where you live mattered more than your ability to repay.")
-    print("can just as easily hurt people based on where they live.")
