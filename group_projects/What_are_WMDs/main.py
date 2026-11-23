@@ -1,4 +1,4 @@
-#This will integrate everyone's module (hopefully).
+#This will integrate everyone's modules.
 while True:
     print("=" * 65)
     print("Welcome to the Weapons of Math Destruction Interactive Module!")
@@ -27,27 +27,3 @@ while True:
         import file5
     else:
         print("Invalid choice.\n")
-
-
-"""
-#maybe use gui for main module if we have time???
-import tkinter as tk
-
-clicks = 0
-
-def on_click():
-    global clicks
-    clicks += 1
-    print("Clicks = ", clicks)
-#change click command to link to modules??
-
-window = tk.Tk()
-window.title("gui")
-
-label = tk.Label(window, text="Welcome to the Weapons of Math Destruction Interactive Module!", font="Calibri, 20")
-label.pack(pady=20)
-
-button = tk.Button(window, text="Click Me!", command=on_click)
-button.pack()
-window.mainloop()
-"""
