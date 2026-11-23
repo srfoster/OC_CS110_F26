@@ -17,7 +17,6 @@ while True:
     if choice == "1":
         from sylvester_opacity_module import run_code
         run_code()
-        """
     elif choice == "2":
         import file2
     elif choice == "3":
@@ -26,7 +25,6 @@ while True:
         import file4
     elif choice == "5":
         import file5
-        """
     else:
         print("Invalid choice.\n")
 
