@@ -19,6 +19,7 @@ new_criminal_text = Criminal.output_criminal()
 
 def get_crime():
     new_criminal_text = Criminal.output_criminal()
+    Generate_Criminal.configure(text=new_criminal_text)
 
 # refreshes the tree view with any new tokens
 def refresh():
@@ -124,6 +125,7 @@ tree.bind("<<TreeviewSelect>>", on_select)
 ttk.Label(mainframe, text="Saved Tokens").grid(column=1, row=3, sticky=E)
 info_label = ttk.Label(mainframe, text="Object:")
 info_label.grid(column=0, row=6, sticky=W, padx=10, pady=10)
+Generate_Criminal = ttk.Label(mainframe, text="Criminal").grid(column=3, row=3)
 
 # the mainloop for root
 root.mainloop()
