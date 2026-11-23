@@ -25,19 +25,10 @@ def clear_screen(): # clears the terminal using OS commands
     else:
         os.system("clear") # Mac & Linux clear
 
-APPROVAL_CUTOFF = 60
-
-last_name = input("Applicant name: ")
 
 last_names1 = ["Martinez", "Gutierres", "Salinas", "Guillermo", "Hernandez", "Garcia", "Rodriguez", "Lopez", "Gonzales", "Sanchez", "Ramirez", "Rivera", "Gomez"
               "Reyes", "Cruz", "Diaz"]
 last_names2  = ["Foster"] 
-
-if last_name in last_names1:
-    APPROVAL_CUTOFF = 80
-
-if last_name in last_names2:
-    APPROVAL_CUTOFF = 200
 
 questions = [ # dictionary of questions with text, options, and point value
     {
@@ -112,11 +103,23 @@ def run_module(): # main module loop
     # prints initial header
     print()
     print("=== Loan Approval Survey ===")
-    print("Please answer each question truthfully.")
-    print("You will receive points based on your responses.")    
-    print("You need at least", APPROVAL_CUTOFF, "points to be approved.")
+    print()
+    print("- Please answer each question truthfully.")
+    print("- You will receive points based on your responses.")    
+    print("- You need at least 60 points to be approved.")
     # asks each question accumulating points
     total_score = 0
+    
+    print()
+    last_name = input("Applicant name: ")
+    if last_name in last_names1:
+        APPROVAL_CUTOFF = 80
+
+    if last_name in last_names2:
+        APPROVAL_CUTOFF = 200
+    else: 
+        APPROVAL_CUTOFF = 60
+    
     for question in questions:
         points = ask_question(question)
         total_score += points
@@ -142,4 +145,3 @@ def run_module(): # main module loop
     return decision
     
 run_module() # for in file testing only
-
