@@ -77,7 +77,7 @@ def run_module(): # main module loop
     print()
     print("=== Loan Approval Survey ===")
     print("Please answer each question truthfully.")
-    print("You will recieve points based on your responses.")    
+    print("You will receive points based on your responses.")    
     print("You need at least", APPROVAL_CUTOFF, "points to be approved.")
 
     # asks each question accumulating points
