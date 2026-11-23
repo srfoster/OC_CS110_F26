@@ -140,7 +140,7 @@ def run_code():
             if "✔" not in options[int(user_choice) - 1]:
                 options[int(user_choice) - 1] += " ✔"
         elif user_choice == "5":
-            print("\nThank you for using this program!") #maybe replace with link to other modules if not using
+            print("\nThank you for using this program!\n") #maybe replace with link to other modules if not using
             return False # ^main.py as main thing to look at and instead are going through all of them one at a time
             # or just return to main.py
         else:
