@@ -15,10 +15,10 @@ def net_worth_after(before, loss):
     return before - loss
 
 
-# ---------- GUI ----------
+#Name
 
 class NetWorthFrame(tk.Frame):
-    # (label shown on screen, key name)
+    # label shown on screen, key name
     FIELDS = [
         ("Total assets ($)", "assets"),
         ("Total debts ($)", "debts"),
@@ -85,9 +85,4 @@ class NetWorthFrame(tk.Frame):
                   "Net worth AFTER: ${:,.2f}").format(before, loss, after))
 
 
-# Run this file alone to test: python networth.py
-if __name__ == "__main__":
-    root = tk.Tk()
-    root.title("Net Worth")
-    NetWorthFrame(root).pack(padx=10, pady=10)
-    root.mainloop()
+
