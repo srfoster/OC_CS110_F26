@@ -105,6 +105,5 @@ def run_module(): # main module loop
     print()
     print("!!! Your loan application is " + decision + ".")
 
-    return decision
     
 run_module() # for in file testing only

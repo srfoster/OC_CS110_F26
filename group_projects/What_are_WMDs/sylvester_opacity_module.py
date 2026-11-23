@@ -1,16 +1,7 @@
-#maybe form full diagram from final at week 10 and distribute across weeks, either leave week 7 blank or put forming ideas in there
-
-#WRITE TO A FILE AND OPEN WHEN USER TYPES OPTIONS?
-#is .py in the filename or the file type? important for importing to main file
-
-
-
-
-
+#This program doesn't do anything when run. All the code is wrapped in the run_code() function, which is called in the main.py file.
 def run_code():
 
     #This program assumes the user has a basic understanding of python and an idea of what models are.
-    
     import random
     
     #ansi codes for text designs
@@ -140,7 +131,7 @@ def run_code():
             if "✔" not in options[int(user_choice) - 1]:
                 options[int(user_choice) - 1] += " ✔"
         elif user_choice == "5":
-            print("\nThank you for using this program!") #maybe replace with link to other modules if not using
+            print("\nThank you for using this program!\n") #maybe replace with link to other modules if not using
             return False # ^main.py as main thing to look at and instead are going through all of them one at a time
             # or just return to main.py
         else:

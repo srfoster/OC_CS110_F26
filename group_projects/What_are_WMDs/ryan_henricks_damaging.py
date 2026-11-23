@@ -1,6 +1,6 @@
 # This is meant to teach users how WMDs can harm people and how they can be stopped.
 with open("Story1.txt", "w") as f:
-    f.write("Welcome! You are a recent college graduate looking for a job.\n"
+    f.write("Welcome! \n You are a recent college graduate looking for a job.\n"
             "You have applied to many companies but have\n"
             "not heard back about your applications.\n"
             "You call the companies to ask about them, but all they say is\n"
