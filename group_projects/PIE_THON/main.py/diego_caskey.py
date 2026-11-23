@@ -40,7 +40,7 @@ def ask_question(question): # asks a given question returning points earned
 	
     number_of_options = len(question["options"]) # gets option quantity
 
-	letters = ["a", "b", "c", "d"] # multiple choice labels
+    letters = ["a", "b", "c", "d"] # multiple choice labels
 	
     while True: 
         print()
@@ -76,9 +76,10 @@ def run_module(): # main module loop
     # prints initial header
     print()
     print("=== Loan Approval Survey ===")
-    print("Please answer each question truthfully.")
-    print("You will receive points based on your responses.")    
-    print("You need at least", APPROVAL_CUTOFF, "points to be approved.")
+    print()
+    print("- Please answer each question truthfully.")
+    print("- You will receive points based on your responses.")    
+    print("- You need at least", APPROVAL_CUTOFF, "points to be approved.")
 
     # asks each question accumulating points
     total_score = 0
@@ -102,7 +103,7 @@ def run_module(): # main module loop
     print()
     print("Total points: " + str(total_score) + " (" + str(difference) + " points " + position + " the cutoff)")
     print()
-    print("-> Your loan application is " + decision + ".")
+    print("!!! Your loan application is " + decision + ".")
 
     return decision
     
