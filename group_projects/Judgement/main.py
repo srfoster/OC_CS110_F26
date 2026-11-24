@@ -87,6 +87,13 @@ hard_button.pack()
 
 
 introduction.mainloop()
+#shift counters
+approved_count = 0
+denied_count = 0
+
+x = 0
+while x < 3:
+
 x = 0
 while x < 3:
     decision = tk.Tk()
