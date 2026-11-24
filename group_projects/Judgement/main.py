@@ -93,9 +93,6 @@ denied_count = 0
 
 x = 0
 while x < 3:
-
-x = 0
-while x < 3:
     decision = tk.Tk()
 
     random_index = random.randrange(len(selected_dificulty))    #randomly chooses one of our packed prompt variables
@@ -105,6 +102,8 @@ while x < 3:
     prompt, accepted, denied = random_prompt                    #unpacks the variables back into the 3 parts
 
     def approve_press():
+        global approved_count           #NEW lets function modify approved_count
+        approved_count += 1             #NEW lets function modify approved_count
         print("Approved!")
         decision.destroy()  
     
@@ -123,16 +122,17 @@ while x < 3:
     
 
     def denied_press():
-        print("Denied!")  
-        decision.destroy()  
-        
         global denials_remaining
+        global denied_count             # NEW: lets function modify denied_count
 
         if denials_remaining <= 0:
             return
         
         denials_remaining -= 1
-
+        denied_count += 1               # NEW: adds 1 to denial counter
+        print("Denied!")                # MOVED: moved below the if-check so window doesn't close early
+        decision.destroy()              # MOVED: moved below the if-check so window doesn't close early 
+        
         denied_consequence = tk.Tk()
     
         denied_consequence.title("After Denial")    
@@ -196,7 +196,26 @@ conclusion = tk.Tk()
 
 conclusion.title("Time to clock out")
 conclusion.configure(bg= jet.backgroundColor)
-conclusion.geometry("800x400")
+conclusion.geometry("800x500") #taller to fit report
+
+# NEW BLOCK: picks a custom ending message based on your choices
+if denials_remaining == 0:
+    shift_note = "WARDEN REVIEW: You maxed out your denial budget. Expect a call from the state about prison overcrowding."
+elif approved_count == 3:
+    shift_note = "WARDEN REVIEW: You approved every single release today. Hopefully your trust in rehabilitation pays off."
+else:
+    shift_note = "WARDEN REVIEW: You balanced public safety with prison capacity limits."
+
+# NEW BLOCK: builds the multi-line summary text using your variables
+summary_text = (
+    "=== END OF SHIFT REPORT ===\n\n"
+    f"Cases Reviewed: {x}\n"
+    f"Early Releases Approved: {approved_count}\n"
+    f"Early Releases Denied: {denied_count}\n"
+    f"Denials Remaining in Budget: {denials_remaining}\n\n"
+    f"{shift_note}\n\n"
+    "You have made your decisions for the day. At this point, you can only stand by your choices."
+)
 
 conclusion_label = tk.Label(conclusion, text="You have made your decisions for the day, at this point you can only stand by your choices that they made the world a safer place.", font=("Arial", 16), fg= jet.fontColor, wraplength=700)
 conclusion_label.configure(bg= jet.backgroundColor)
