@@ -51,3 +51,4 @@ PAH = ("NAME: Alton Churchwood\n"
 "You did the right the thing, if Alton was released, he would have caused more harm to the public.\n""You informed the police about the threat, and the police are watching your house to protect your family.")
 prompt, accepted, denied = PAH
 
+PAH_AI= "additional info here"
