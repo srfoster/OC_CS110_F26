@@ -217,7 +217,7 @@ summary_text = (
     "You have made your decisions for the day. At this point, you can only stand by your choices."
 )
 
-conclusion_label = tk.Label(conclusion, text="You have made your decisions for the day, at this point you can only stand by your choices that they made the world a safer place.", font=("Arial", 16), fg= jet.fontColor, wraplength=700)
+conclusion_label = tk.Label(conclusion, text=summary_text, font=("Arial", 16), fg= jet.fontColor, wraplength=700)
 conclusion_label.configure(bg= jet.backgroundColor)
 conclusion_label.pack(pady=30)
 
