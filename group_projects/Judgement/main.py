@@ -87,6 +87,13 @@ hard_button.pack()
 
 
 introduction.mainloop()
+#shift counters
+approved_count = 0
+denied_count = 0
+
+x = 0
+while x < 3:
+
 x = 0
 while x < 3:
     decision = tk.Tk()
@@ -207,6 +214,8 @@ conclusion.mainloop()
 #1. Most importantly finalize the prompts for each of your prisorners one for each difficulty level, Easy, Medium, and Hard.
 #2. Setting unique variables for all prompts, accepted consequences, and denied consequences.
 #3. Gonna make a function to have the font and background colors so we're not just piling main up and we can more easily change things to how we want
+#4. Add a timer for the game itself and if you run out game over.
+#5. Summary page at end.
 
 #Eventually we will want to make the game harder by restricting information about the prisoner or how they were arrested.
 #To create, "i need more information", when pressing button, def open new, pull from list. put in destroy to remove 
