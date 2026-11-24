@@ -93,9 +93,6 @@ denied_count = 0
 
 x = 0
 while x < 3:
-
-x = 0
-while x < 3:
     decision = tk.Tk()
 
     random_index = random.randrange(len(selected_dificulty))    #randomly chooses one of our packed prompt variables
