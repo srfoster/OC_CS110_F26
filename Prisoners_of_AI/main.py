@@ -19,7 +19,7 @@ new_criminal_text = Criminal.output_criminal()
 
 def get_crime():
     new_criminal_text = Criminal.output_criminal()
-    Generate_Criminal.configure(text=new_criminal_text)
+    the_input.configure(text=new_criminal_text)
 
 # refreshes the tree view with any new tokens
 def refresh():
@@ -70,7 +70,11 @@ def on_select(event):
 # initilizes the GUI
 root = Tk()
 root.title("Prisoners of AI")
-root.geometry("600x400")
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+window_width = int(screen_width * 0.6)
+window_height = int(screen_height)
+root.geometry(f"{window_width}x{window_height}")
 
 # creates a the mainframe of the GUI
 mainframe = ttk.Frame(root, padding=(3,3,12,12))
@@ -80,8 +84,13 @@ mainframe.grid(column=0, row=0, sticky=(N, W, E,S))
 the_input = StringVar()
 
 input_frame = ttk.Frame(mainframe)
-input_frame.grid(column=0, row=1, columnspan=4, sticky=(W, E), padx=5, pady=5)
+input_frame.grid(column=0, row=1, columnspan=3, sticky=(W, E), padx=5, pady=10)
 input_frame.columnconfigure(1, weight=1)
+
+User_Label = ttk.Label(input_frame, text="User input:")
+User_Label.grid(column=0, row=0, sticky=W, pady=10)
+input_field = ttk.Entry(input_frame, textvariable=the_input)
+input_field.grid(column=1, row=0, sticky=EW, padx=5, pady=10)
 
 # configures the root of the gui for grids
 root.columnconfigure(0, weight=1)
@@ -93,13 +102,19 @@ input_field.focus()
 root.bind("<Return>", on_send)
 
 # creates the button send text that sends text in the input field to Nathan_morris
-ttk.Button(mainframe, text="Send text", command=on_send).grid(column=2, row=0, sticky=W)
+Send_Button = ttk.Button(input_frame, text="Send text", command=partial(on_send, the_input))
+Send_Button.grid(column=2, row=0, sticky=W, pady=10)
 
 # creates the button to refresh the treeview
-ttk.Button(mainframe, text="Refresh token list", command=refresh).grid(column=3, row=5, sticky=W)
+Refresh_Button = ttk.Button(mainframe, text="Refresh token list", command=refresh)
+Refresh_Button.grid(column=2, row=5, sticky=W)
 
 # creates the button to generate a criminal from Lucas_Van_Wyhe_Criminals
-ttk.Button(mainframe, text="Generate Criminal", command=get_crime).grid(column=3, row=4)
+Crime_Button = ttk.Button(mainframe, text="Generate Criminal", command=get_crime)
+Crime_Button.grid(column=2, row=4)
+
+Release_Button = ttk.Button(mainframe, text="Release?", command=partial(release, test))
+Release_Button.grid(column=0, row=8, sticky=E, padx=10)
 
 # creates the base of the treeview and starts each selection as the first key of the tokens
 # in this case a-z
@@ -111,21 +126,26 @@ tree.column("Token", width=200, anchor="center")
 for key, value in enumerate(tokens):
     tree.insert('', 'end', value, text=value)
 
+tree.bind("<<TreeviewSelect>>", on_select)
+
 # sets the location of the tree
-tree.grid(column=1, row=5)
+tree.grid(column=0, row=5, sticky=(W), padx=10)
 
 selection = tree.selection()
 slider =ttk.Scale(mainframe, from_=0,to=100, orient="horizontal",length=200, command=on_slider_move)
 slider.set(50)
 slider.grid(column=1, row=6, sticky=W)
 
-tree.bind("<<TreeviewSelect>>", on_select)
-
 # creates several labels for the gui
-ttk.Label(mainframe, text="Saved Tokens").grid(column=1, row=3, sticky=E)
+Saved_Label = ttk.Label(mainframe, text="Saved Tokens")
+Saved_Label.grid(column=0, row=3, sticky=(W, N), padx=10)
+Released_Label = ttk.Label(mainframe, text="Pending prisoner information for release recommendation")
+Released_Label.grid(column=1, row=8, sticky=W)
 info_label = ttk.Label(mainframe, text="Object:")
 info_label.grid(column=0, row=6, sticky=W, padx=10, pady=10)
-Generate_Criminal = ttk.Label(mainframe, text="Criminal").grid(column=3, row=3)
+#Generate_Criminal = ttk.Label(mainframe, text="Criminal").grid(column=3, row=3)
 
+Networth = NetWorthFrame(mainframe)
+Networth.grid(column=0, row=7, padx=10, pady=10, sticky=N)
 # the mainloop for root
 root.mainloop()
