@@ -1,5 +1,6 @@
 import string
-
+import math
+import random as r
 # man I wish I could use classes in this class.
 # it would allow me greater controll and give others in my group the ability to extend off of it
 
@@ -46,6 +47,14 @@ def send_text(*args):
                 saved_tokens[i[0]][i]['location'].append(value)
                 saved_tokens[i[0]][i]['relationships'][-1] = previous
                 saved_tokens[i[0]][i]['relationships'][1] = following
+            for value, x in enumerate(saved_tokens[v][i]['weights']):
+                y = saved_tokens[v][i]['location'][0]
+                if y == 0:
+                    adj = saved_tokens[previous[0]][previous]['location'][0] if previous != None and previous in saved_tokens[previous[0]] else -0.5
+                    opp = saved_tokens[following[0]][following]['location'][0] if following != None and following in saved_tokens[following[0]] else 0.5
+                    saved_tokens[v][i]['weights'][value] = round(math.cos((adj / opp) * 0.75 * r.randint(1, 3)), 2)
+                else:
+                    saved_tokens[v][i]['weights'][value] = round(x / (r.randint(1, y+1) - 0.07), 2)
         print(saved_tokens)
             # saved token the key is the value of the char and the list
             # has weights from 0 to 1 with index 0 being the location
@@ -53,3 +62,35 @@ def send_text(*args):
             # [location, ]
     except ValueError:
         pass
+
+def release(networth):
+    assets = networth.get_number("assets")
+    debts = networth.get_number("debts")
+    income = networth.get_number("yearly_income")
+    fine = networth.get_number("fine")
+    fees = networth.get_number("court_fees")
+    restitution = test.get_number("restitution")
+    forfeiture = test.get_number("forfeiture")
+    years = test.get_number("sentence_years")
+    before = net_worth_before(assets, debts)
+    loss = total_loss(fine, fees, restitution, forfeiture, income, years)
+    after = net_worth_after(before, loss)
+    sum_of_weights = 0
+    total = 0
+    print(context)
+    for i, value in enumerate(context[0]):
+        v= value[0]
+        for x in saved_tokens[v][value]['weights']:
+            print(x)
+            sum_of_weights += x
+    total = math.cos(sum_of_weights) * (math.cos(abs(after)) + 1) + math.cos(abs(years))
+    if total > 0:
+        if len(context[0]) >= 14:
+            Released_Label.config(text="You can release: " + context[0][4].capitalize())
+        else:
+            Released_Label.config(text="You can release them")
+    else:
+        if len(context[0]) >= 14:
+            Released_Label.config(text="Recommend to keep: " + context[0][4].capitalize() + " in prison")
+        else:
+            Released_Label.config(text="Recommend to keep them in prison")
