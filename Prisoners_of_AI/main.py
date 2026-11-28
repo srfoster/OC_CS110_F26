@@ -8,6 +8,7 @@ import math
 import Nathan_morris as NM
 import Lucas_Van_Wyhe_Criminals as Criminal
 import Nathan_vonheeder as von
+import thuc_tran as TT
 
 # sends the input in the input box to be tokenized in Nathan_morris
 def on_send():
@@ -101,8 +102,11 @@ for child in mainframe.winfo_children():
 input_field.focus()
 root.bind("<Return>", on_send)
 
+Networth = TT.NetWorthFrame(mainframe)
+Networth.grid(column=0, row=7, padx=10, pady=10, sticky=N)
+
 # creates the button send text that sends text in the input field to Nathan_morris
-Send_Button = ttk.Button(input_frame, text="Send text", command=partial(on_send, the_input))
+Send_Button = ttk.Button(input_frame, text="Send text", command=on_send)
 Send_Button.grid(column=2, row=0, sticky=W, pady=10)
 
 # creates the button to refresh the treeview
@@ -113,7 +117,9 @@ Refresh_Button.grid(column=2, row=5, sticky=W)
 Crime_Button = ttk.Button(mainframe, text="Generate Criminal", command=get_crime)
 Crime_Button.grid(column=2, row=4)
 
-Release_Button = ttk.Button(mainframe, text="Release?", command=partial(release, test))
+Released_Label = ttk.Label(mainframe, text="Pending prisoner information for release recommendation")
+Released_Label.grid(column=1, row=8, sticky=W)
+Release_Button = ttk.Button(mainframe, text="Release?", command=partial(release, Networth, Released_label))
 Release_Button.grid(column=0, row=8, sticky=E, padx=10)
 
 # creates the base of the treeview and starts each selection as the first key of the tokens
@@ -139,13 +145,9 @@ slider.grid(column=1, row=6, sticky=W)
 # creates several labels for the gui
 Saved_Label = ttk.Label(mainframe, text="Saved Tokens")
 Saved_Label.grid(column=0, row=3, sticky=(W, N), padx=10)
-Released_Label = ttk.Label(mainframe, text="Pending prisoner information for release recommendation")
-Released_Label.grid(column=1, row=8, sticky=W)
 info_label = ttk.Label(mainframe, text="Object:")
 info_label.grid(column=0, row=6, sticky=W, padx=10, pady=10)
 #Generate_Criminal = ttk.Label(mainframe, text="Criminal").grid(column=3, row=3)
 
-Networth = NetWorthFrame(mainframe)
-Networth.grid(column=0, row=7, padx=10, pady=10, sticky=N)
 # the mainloop for root
 root.mainloop()
