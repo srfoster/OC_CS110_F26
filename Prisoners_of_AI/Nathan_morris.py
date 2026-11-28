@@ -1,6 +1,7 @@
 import string
 import math
 import random as r
+import thuc_tran as TT
 # man I wish I could use classes in this class.
 # it would allow me greater controll and give others in my group the ability to extend off of it
 
@@ -9,6 +10,7 @@ import random as r
 # it then assigns a dictionary to each of those keys
 
 saved_tokens = {letter: {} for letter in string.ascii_lowercase}
+context = []
 
 def get_tokens ():
     return saved_tokens
@@ -29,6 +31,7 @@ def send_text(*args):
     try:
         the_text = args[0].lower()
         tokens = the_text.split()
+        context.append(tokens)
         for value, i in enumerate(tokens):
             print(value)
             previous = tokens[value - 1] if value > 0 else None
@@ -63,18 +66,18 @@ def send_text(*args):
     except ValueError:
         pass
 
-def release(networth):
+def release(networth, Released_Label):
     assets = networth.get_number("assets")
     debts = networth.get_number("debts")
     income = networth.get_number("yearly_income")
     fine = networth.get_number("fine")
     fees = networth.get_number("court_fees")
-    restitution = test.get_number("restitution")
-    forfeiture = test.get_number("forfeiture")
-    years = test.get_number("sentence_years")
-    before = net_worth_before(assets, debts)
-    loss = total_loss(fine, fees, restitution, forfeiture, income, years)
-    after = net_worth_after(before, loss)
+    restitution = networth.get_number("restitution")
+    forfeiture = networth.get_number("forfeiture")
+    years = networth.get_number("sentence_years")
+    before = TT.net_worth_before(assets, debts)
+    loss = TT.total_loss(fine, fees, restitution, forfeiture, income, years)
+    after = TT.net_worth_after(before, loss)
     sum_of_weights = 0
     total = 0
     print(context)
